@@ -421,6 +421,30 @@
         "documentation": {}
     },
     {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "slugify",
         "importPath": "django.utils.text",
         "description": "django.utils.text",
@@ -855,7 +879,7 @@
         "kind": 6,
         "importPath": "products.admin",
         "description": "products.admin",
-        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n    list_display = [\"name\", \"parent\"]\n    prepopulated_fields = {\"slug\": (\"name\",)}\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    list_display = [\"name\", \"category\", \"price\", \"stock\", \"is_active\"]\n    list_filter = [\"category\", \"is_active\"]\n    prepopulated_fields = {\"slug\": (\"name\",)}",
+        "peekOfCode": "class CategoryAdmin(ModelAdminCategory):\n    list_display = [\"name\", \"parent\"]\n    prepopulated_fields = {\"slug\": (\"name\",)}\n@admin.register(Product)\nclass ProductAdmin(ModelAdminProduct):\n    list_display = [\"name\", \"category\", \"price\", \"stock\", \"is_active\"]\n    list_filter = [\"category\", \"is_active\"]\n    prepopulated_fields = {\"slug\": (\"name\",)}",
         "detail": "products.admin",
         "documentation": {}
     },
@@ -864,7 +888,7 @@
         "kind": 6,
         "importPath": "products.admin",
         "description": "products.admin",
-        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    list_display = [\"name\", \"category\", \"price\", \"stock\", \"is_active\"]\n    list_filter = [\"category\", \"is_active\"]\n    prepopulated_fields = {\"slug\": (\"name\",)}",
+        "peekOfCode": "class ProductAdmin(ModelAdminProduct):\n    list_display = [\"name\", \"category\", \"price\", \"stock\", \"is_active\"]\n    list_filter = [\"category\", \"is_active\"]\n    prepopulated_fields = {\"slug\": (\"name\",)}",
         "detail": "products.admin",
         "documentation": {}
     },
@@ -954,7 +978,7 @@
         "kind": 6,
         "importPath": "users.admin",
         "description": "users.admin",
-        "peekOfCode": "class UserAdmin(admin.ModelAdmin):\n    list_display = (\"username\", \"email\", \"phone\", \"is_staff\")\n    search_fields = (\"username\", \"email\", \"phone\")",
+        "peekOfCode": "class UserAdmin(ModelAdminUser):\n    list_display = (\"username\", \"email\", \"phone\", \"is_staff\")\n    search_fields = (\"username\", \"email\", \"phone\")",
         "detail": "users.admin",
         "documentation": {}
     },
@@ -972,7 +996,7 @@
         "kind": 6,
         "importPath": "users.models",
         "description": "users.models",
-        "peekOfCode": "class User(AbstractUser):\n    phone = models.CharField(\n        max_length=20, blank=True, null=True, verbose_name=\"Телефон\"\n    )\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return self.username",
+        "peekOfCode": "class User(AbstractUser):\n    phone: str | None = models.CharField(\n        max_length=20, blank=True, null=True, verbose_name=\"Телефон\"\n    )  # type: ignore[assignment]\n    created_at: \"datetime.datetime\" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]\n    updated_at: \"datetime.datetime\" = models.DateTimeField(auto_now=True)  # type: ignore[assignment]\n    def __str__(self: \"User\") -> str:\n        return self.username",
         "detail": "users.models",
         "documentation": {}
     },

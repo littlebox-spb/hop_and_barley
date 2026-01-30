@@ -15,7 +15,7 @@ dependencies = [
     "python-dotenv (>=1.2.1,<2.0.0)",
     "pillow (>=12.1.0,<13.0.0)",
     "djangorestframework-simplejwt (>=5.5.1,<6.0.0)",
-    "drf-spectacular (>=0.29.0,<0.30.0)"
+    "drf-spectacular (>=0.29.0,<0.30.0)",
 ]
 
 
@@ -30,7 +30,53 @@ django-extensions = "^4.1"
 pytest-django = "^4.11.1"
 pytest-cov = "^7.0.0"
 factory-boy = "^3.3.3"
-flake8 = "^7.3.0"
+ruff = "^0.14.11"
 mypy = "^1.19.1"
 django-stubs = "^5.2.9"
+django-stubs-ext = "^5.2.9"
 
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv",
+    "build",
+    "dist",
+    # Django-специфичные исключения:
+    "*/migrations/",  # Все директории с миграциями
+    "*/tests/",       # Все директории с тестами
+    "manage.py",      # Главный скрипт
+    "settings.py",    # Файл настроек может быть специфичным
+    # Дополнительные исключения по необходимости
+    "docs/",
+    "static/",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+ignore_missing_imports = true
+plugins = "mypy_django_plugin.main"
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv/",
+    "build/",
+    "dist/",
+    # Django-специфичные исключения:
+    "migrations/",  # Все директории с миграциями
+    "tests/",       # Все директории с тестами
+    "manage.py",      # Главный скрипт
+    "settings.py",    # Файл настроек может быть специфичным
+    # Дополнительные исключения по необходимости
+    "docs/",
+    "static/",
+]
+
+[tool.django-stubs]
+django_settings_module = "config.settings"

@@ -1,13 +1,19 @@
+from typing import TYPE_CHECKING
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class User(AbstractUser):
-    phone = models.CharField(
-        max_length=20, blank=True, null=True, verbose_name="Телефон"
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+if TYPE_CHECKING:
+    import datetime
 
-    def __str__(self):
+
+class User(AbstractUser):
+    phone: str | None = models.CharField(
+        max_length=20, blank=True, null=True, verbose_name="Телефон"
+    )  # type: ignore[assignment]
+    created_at: "datetime.datetime" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]
+    updated_at: "datetime.datetime" = models.DateTimeField(auto_now=True)  # type: ignore[assignment]
+
+    def __str__(self: "User") -> str:
         return self.username
