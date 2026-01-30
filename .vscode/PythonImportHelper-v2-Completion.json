@@ -293,6 +293,70 @@
         "documentation": {}
     },
     {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Self",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -421,35 +485,19 @@
         "documentation": {}
     },
     {
-        "label": "TYPE_CHECKING",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "TYPE_CHECKING",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "TYPE_CHECKING",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "slugify",
         "importPath": "django.utils.text",
         "description": "django.utils.text",
         "isExtraImport": true,
         "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "users.models",
+        "description": "users.models",
+        "isExtraImport": true,
+        "detail": "users.models",
         "documentation": {}
     },
     {
@@ -816,7 +864,7 @@
         "kind": 6,
         "importPath": "orders.admin",
         "description": "orders.admin",
-        "peekOfCode": "class OrderItemInline(admin.TabularInline):\n    model = OrderItem\n    extra = 1\n@admin.register(Order)\nclass OrderAdmin(admin.ModelAdmin):\n    inlines = [OrderItemInline]\n    list_display = [\"id\", \"user\", \"created\", \"is_paid\"]",
+        "peekOfCode": "class OrderItemInline(TabularInlineItem):\n    model = OrderItem\n    extra = 1\n@admin.register(Order)\nclass OrderAdmin(ModelAdminOrder):\n    inlines = [OrderItemInline]\n    list_display = [\"id\", \"user\", \"created\", \"is_paid\"]",
         "detail": "orders.admin",
         "documentation": {}
     },
@@ -825,7 +873,7 @@
         "kind": 6,
         "importPath": "orders.admin",
         "description": "orders.admin",
-        "peekOfCode": "class OrderAdmin(admin.ModelAdmin):\n    inlines = [OrderItemInline]\n    list_display = [\"id\", \"user\", \"created\", \"is_paid\"]",
+        "peekOfCode": "class OrderAdmin(ModelAdminOrder):\n    inlines = [OrderItemInline]\n    list_display = [\"id\", \"user\", \"created\", \"is_paid\"]",
         "detail": "orders.admin",
         "documentation": {}
     },
@@ -843,7 +891,7 @@
         "kind": 6,
         "importPath": "orders.models",
         "description": "orders.models",
-        "peekOfCode": "class Order(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=\"orders\")\n    created = models.DateTimeField(auto_now_add=True)\n    is_paid = models.BooleanField(default=False)\n    def __str__(self):\n        return f\"Order {self.id}\"\nclass OrderItem(models.Model):\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name=\"items\")\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField(default=1)",
+        "peekOfCode": "class Order(models.Model):\n    user: \"User\" = models.ForeignKey(\n        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name=\"orders\"\n    )  # type: ignore[assignment]\n    created: \"datetime\" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]\n    is_paid: bool = models.BooleanField(default=False)  # type: ignore[assignment]\n    def __str__(self) -> str:\n        return f\"Order {self.id}\"\nclass OrderItem(models.Model):\n    order: Order = models.ForeignKey(",
         "detail": "orders.models",
         "documentation": {}
     },
@@ -852,16 +900,7 @@
         "kind": 6,
         "importPath": "orders.models",
         "description": "orders.models",
-        "peekOfCode": "class OrderItem(models.Model):\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name=\"items\")\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField(default=1)\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    def __str__(self):\n        return f\"{self.product} x {self.quantity}\"",
-        "detail": "orders.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "kind": 5,
-        "importPath": "orders.models",
-        "description": "orders.models",
-        "peekOfCode": "User = settings.AUTH_USER_MODEL\nclass Order(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=\"orders\")\n    created = models.DateTimeField(auto_now_add=True)\n    is_paid = models.BooleanField(default=False)\n    def __str__(self):\n        return f\"Order {self.id}\"\nclass OrderItem(models.Model):\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name=\"items\")\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)",
+        "peekOfCode": "class OrderItem(models.Model):\n    order: Order = models.ForeignKey(\n        Order, on_delete=models.CASCADE, related_name=\"items\"\n    )  # type: ignore[assignment]\n    product: Product = models.ForeignKey(Product, on_delete=models.CASCADE)  # type: ignore[assignment]\n    quantity: int = models.PositiveIntegerField(default=1)  # type: ignore[assignment]\n    price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]\n    def __str__(self) -> str:\n        return f\"{self.product} x {self.quantity}\"",
         "detail": "orders.models",
         "documentation": {}
     },
@@ -906,7 +945,7 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=200)\n    slug = models.SlugField(unique=True)\n    parent = models.ForeignKey(\n        \"self\", blank=True, null=True, related_name=\"children\", on_delete=models.CASCADE\n    )\n    def save(self, *args, **kwargs) -> None:\n        if not self.slug:\n            self.slug = slugify.name\n        super().save(*args, **kwargs)",
+        "peekOfCode": "class Category(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    parent: Self | None = models.ForeignKey(\n        \"self\", blank=True, null=True, related_name=\"children\", on_delete=models.CASCADE\n    )  # type: ignore[assignment]\n    def save(self: Self, *args: Any, **kwargs: Any) -> None:\n        if not self.slug:\n            self.slug = slugify(self.name)\n        super().save(*args, **kwargs)",
         "detail": "products.models",
         "documentation": {}
     },
@@ -915,7 +954,7 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Product(models.Model):\n    name = models.CharField(max_length=200)\n    slug = models.SlugField(unique=True)\n    category = models.ForeignKey(Category, on_delete=models.CASCADE)\n    description = models.TextField()\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    stock = models.PositiveIntegerField(default=0)\n    is_active = models.BooleanField(default=True)\n    def save(self, *args, **kwargs) -> None:\n        if not self.slug:",
+        "peekOfCode": "class Product(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    category: Category = models.ForeignKey(Category, on_delete=models.CASCADE)  # type: ignore[assignment]\n    description: str = models.TextField()  # type: ignore[assignment]\n    price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]\n    stock: int = models.PositiveIntegerField(default=0)  # type: ignore[assignment]\n    is_active: bool = models.BooleanField(default=True)  # type: ignore[assignment]\n    def save(self: Self, *args: Any, **kwargs: Any) -> None:\n        if not self.slug:",
         "detail": "products.models",
         "documentation": {}
     },
@@ -951,16 +990,7 @@
         "kind": 6,
         "importPath": "reviews.models",
         "description": "reviews.models",
-        "peekOfCode": "class Review(models.Model):\n    product = models.ForeignKey(\n        Product, on_delete=models.CASCADE, related_name=\"reviews\"\n    )\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    rating = models.PositiveIntegerField()\n    text = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"Review {self.rating}/5\"",
-        "detail": "reviews.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "kind": 5,
-        "importPath": "reviews.models",
-        "description": "reviews.models",
-        "peekOfCode": "User = settings.AUTH_USER_MODEL\nclass Review(models.Model):\n    product = models.ForeignKey(\n        Product, on_delete=models.CASCADE, related_name=\"reviews\"\n    )\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    rating = models.PositiveIntegerField()\n    text = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):",
+        "peekOfCode": "class Review(models.Model):\n    product: Product = models.ForeignKey(\n        Product, on_delete=models.CASCADE, related_name=\"reviews\"\n    )  # type: ignore[assignment]\n    user: User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # type: ignore[assignment]\n    rating: int = models.PositiveIntegerField()  # type: ignore[assignment]\n    text: str = models.TextField()  # type: ignore[assignment]\n    created_at: \"datetime\" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]\n    def __str__(self) -> str:\n        return f\"Review {self.rating}/5\"",
         "detail": "reviews.models",
         "documentation": {}
     },
@@ -996,7 +1026,7 @@
         "kind": 6,
         "importPath": "users.models",
         "description": "users.models",
-        "peekOfCode": "class User(AbstractUser):\n    phone: str | None = models.CharField(\n        max_length=20, blank=True, null=True, verbose_name=\"Телефон\"\n    )  # type: ignore[assignment]\n    created_at: \"datetime.datetime\" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]\n    updated_at: \"datetime.datetime\" = models.DateTimeField(auto_now=True)  # type: ignore[assignment]\n    def __str__(self: \"User\") -> str:\n        return self.username",
+        "peekOfCode": "class User(AbstractUser):\n    phone: str | None = models.CharField(\n        max_length=20, blank=True, null=True, verbose_name=\"Телефон\"\n    )  # type: ignore[assignment]\n    created_at: \"datetime\" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]\n    updated_at: \"datetime\" = models.DateTimeField(auto_now=True)  # type: ignore[assignment]\n    def __str__(self: \"User\") -> str:\n        return self.username",
         "detail": "users.models",
         "documentation": {}
     },
