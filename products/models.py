@@ -11,13 +11,13 @@ class Category(models.Model):
         "self", blank=True, null=True, related_name="children", on_delete=models.CASCADE
     )  # type: ignore[assignment]
 
+    def __str__(self) -> str:
+        return self.name
+
     def save(self: Self, *args: Any, **kwargs: Any) -> None:
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-
-    def __str__(self) -> str:
-        return self.name
 
 
 class Product(models.Model):
@@ -29,10 +29,10 @@ class Product(models.Model):
     stock: int = models.PositiveIntegerField(default=0)  # type: ignore[assignment]
     is_active: bool = models.BooleanField(default=True)  # type: ignore[assignment]
 
+    def __str__(self) -> str:
+        return self.name
+
     def save(self: Self, *args: Any, **kwargs: Any) -> None:
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-
-    def __str__(self) -> str:
-        return self.name

@@ -8,8 +8,8 @@ if TYPE_CHECKING:
 
 
 class User(AbstractUser):
-    phone: str | None = models.CharField(
-        max_length=20, blank=True, null=True, verbose_name="Телефон"
+    phone: str = models.CharField(
+        max_length=20, blank=True, default="", verbose_name="Телефон"
     )  # type: ignore[assignment]
     created_at: "datetime" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]
     updated_at: "datetime" = models.DateTimeField(auto_now=True)  # type: ignore[assignment]

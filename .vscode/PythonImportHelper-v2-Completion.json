@@ -421,70 +421,6 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "slugify",
         "importPath": "django.utils.text",
         "description": "django.utils.text",
@@ -945,7 +881,7 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Category(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    parent: Self | None = models.ForeignKey(\n        \"self\", blank=True, null=True, related_name=\"children\", on_delete=models.CASCADE\n    )  # type: ignore[assignment]\n    def save(self: Self, *args: Any, **kwargs: Any) -> None:\n        if not self.slug:\n            self.slug = slugify(self.name)\n        super().save(*args, **kwargs)",
+        "peekOfCode": "class Category(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    parent: Self | None = models.ForeignKey(\n        \"self\", blank=True, null=True, related_name=\"children\", on_delete=models.CASCADE\n    )  # type: ignore[assignment]\n    def __str__(self) -> str:\n        return self.name\n    def save(self: Self, *args: Any, **kwargs: Any) -> None:\n        if not self.slug:",
         "detail": "products.models",
         "documentation": {}
     },
@@ -954,7 +890,7 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Product(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    category: Category = models.ForeignKey(Category, on_delete=models.CASCADE)  # type: ignore[assignment]\n    description: str = models.TextField()  # type: ignore[assignment]\n    price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]\n    stock: int = models.PositiveIntegerField(default=0)  # type: ignore[assignment]\n    is_active: bool = models.BooleanField(default=True)  # type: ignore[assignment]\n    def save(self: Self, *args: Any, **kwargs: Any) -> None:\n        if not self.slug:",
+        "peekOfCode": "class Product(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    category: Category = models.ForeignKey(Category, on_delete=models.CASCADE)  # type: ignore[assignment]\n    description: str = models.TextField()  # type: ignore[assignment]\n    price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]\n    stock: int = models.PositiveIntegerField(default=0)  # type: ignore[assignment]\n    is_active: bool = models.BooleanField(default=True)  # type: ignore[assignment]\n    def __str__(self) -> str:\n        return self.name",
         "detail": "products.models",
         "documentation": {}
     },
@@ -1026,7 +962,7 @@
         "kind": 6,
         "importPath": "users.models",
         "description": "users.models",
-        "peekOfCode": "class User(AbstractUser):\n    phone: str | None = models.CharField(\n        max_length=20, blank=True, null=True, verbose_name=\"Телефон\"\n    )  # type: ignore[assignment]\n    created_at: \"datetime\" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]\n    updated_at: \"datetime\" = models.DateTimeField(auto_now=True)  # type: ignore[assignment]\n    def __str__(self: \"User\") -> str:\n        return self.username",
+        "peekOfCode": "class User(AbstractUser):\n    phone: str = models.CharField(\n        max_length=20, blank=True, default=\"\", verbose_name=\"Телефон\"\n    )  # type: ignore[assignment]\n    created_at: \"datetime\" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]\n    updated_at: \"datetime\" = models.DateTimeField(auto_now=True)  # type: ignore[assignment]\n    def __str__(self: \"User\") -> str:\n        return self.username",
         "detail": "users.models",
         "documentation": {}
     },
