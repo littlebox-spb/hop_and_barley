@@ -1,2 +1,43 @@
+from typing import Any, Self, TYPE_CHECKING
 
-# Create your views here.
+from django.views.generic import DetailView, ListView, TemplateView
+
+from .models import Category, Product
+
+if TYPE_CHECKING:
+    ViewList = ListView[Product]
+    ViewDetail = DetailView[Product]
+else:
+    ViewList = ListView
+    ViewDetail = DetailView
+
+
+class HomeView(TemplateView):
+    template_name = "home.html"
+
+    def get_context_data(self: Self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["features_products"] = Product.objects.filter(is_active=True)[:5]
+        return context
+
+
+class ProductListView(ViewList):
+    model = Product
+    template_name = "products.html"
+    context_object_name = "products"
+    queryset = Product.objects.filter(is_active=True)
+
+    def get_context_data(self: Self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["categories"] = Category.objects.all()
+        return context
+
+
+class ProductDetailView(ViewDetail):
+    model = Product
+    template_name = "product-{slug}.html"
+    slug_field = "slug"
+    context_object_name = "product"
+
+    def get_template_names(self) -> list[str]:
+        return [f"product-{self.object.slug}.html"]

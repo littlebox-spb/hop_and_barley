@@ -34,6 +34,7 @@ ruff = "^0.14.11"
 mypy = "^1.19.1"
 django-stubs = "^5.2.9"
 django-stubs-ext = "^5.2.9"
+djlint = "^1.36.4"
 
 [tool.ruff]
 line-length = 88
@@ -102,3 +103,6 @@ exclude = [
 
 [tool.django-stubs]
 django_settings_module = "config.settings"
+
+[tool.djlint]
+ignore = "H006"
