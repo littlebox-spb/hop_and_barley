@@ -33,11 +33,17 @@ class ProductListView(ViewList):
         return context
 
 
-class ProductDetailView(ViewDetail):
+class ProductDetailView(TemplateView):
     model = Product
-    template_name = "product-{slug}.html"
+    # template_name = "products.html"
+    template_name = "product-citra-hops.html"
     slug_field = "slug"
     context_object_name = "product"
 
-    def get_template_names(self) -> list[str]:
-        return [f"product-{self.object.slug}.html"]
+    def get_template_names(self):
+        # return [f"product-{self.object.slug}.html"]
+        return "product-citra-hops.html"
+
+
+class GuidesRecipesView(TemplateView):
+    template_name = "guides-recipes.html"

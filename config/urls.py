@@ -23,8 +23,9 @@ from django.urls import URLPattern, URLResolver, include, path
 
 urlpatterns: list[URLResolver | URLPattern] = [
     path("admin/", admin.site.urls),
-    path("", include("products.urls")),
     path("accounts/", include("users.urls")),
+    path("", include("orders.urls")),
+    path("", include("products.urls")),
 ]
 
 if settings.DEBUG:

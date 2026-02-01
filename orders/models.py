@@ -15,11 +15,16 @@ class Order(models.Model):
     user: "User" = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="orders"
     )  # type: ignore[assignment]
+    full_name: str = models.CharField(max_length=100, default="")  # type: ignore[assignment]
+    phone: str = models.CharField(max_length=20, default="")  # type: ignore[assignment]
+    city: str = models.CharField(max_length=100, default="")  # type: ignore[assignment]
+    address: str = models.TextField(default="")  # type: ignore[assignment]
     created: "datetime" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]
     is_paid: bool = models.BooleanField(default=False)  # type: ignore[assignment]
+    total_price: float = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # type: ignore[assignment]
 
     def __str__(self) -> str:
-        return f"Order {self.id}"
+        return f"Order #{self.id} by {self.user}"
 
 
 class OrderItem(models.Model):
@@ -31,4 +36,4 @@ class OrderItem(models.Model):
     price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]
 
     def __str__(self) -> str:
-        return f"{self.product} x {self.quantity}"
+        return f"{self.product.name} x {self.quantity}"
