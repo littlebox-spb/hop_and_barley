@@ -340,6 +340,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -478,30 +494,6 @@
     },
     {
         "label": "Self",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Self",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "TYPE_CHECKING",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -653,6 +645,31 @@
         "documentation": {}
     },
     {
+        "label": "Category",
+        "importPath": "products.models",
+        "description": "products.models",
+        "isExtraImport": true,
+        "detail": "products.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "products.models",
+        "description": "products.models",
+        "isExtraImport": true,
+        "detail": "products.models",
+        "documentation": {}
+    },
+    {
+        "label": "django",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django",
+        "description": "django",
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -749,11 +766,323 @@
         "documentation": {}
     },
     {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "shop.models",
+        "description": "shop.models",
+        "isExtraImport": true,
+        "detail": "shop.models",
+        "documentation": {}
+    },
+    {
         "label": "slugify",
         "importPath": "django.utils.text",
         "description": "django.utils.text",
         "isExtraImport": true,
         "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "Review",
+        "importPath": "reviews.models",
+        "description": "reviews.models",
+        "isExtraImport": true,
+        "detail": "reviews.models",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "QuerySet",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
         "documentation": {}
     },
     {
@@ -1412,6 +1741,708 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "products.migrations.0002_product_picture_url",
+        "description": "products.migrations.0002_product_picture_url",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('products', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='product',\n            name='picture_url',\n            field=models.URLField(blank=True, default='', max_length=50),\n        ),",
+        "detail": "products.migrations.0002_product_picture_url",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.cascade-hops",
+        "description": "products.service.cascade-hops",
+        "peekOfCode": "name = \"Cascade Hops\"\nslug = slugify(name)\ndescription = (\n    \"Cascade is arguably the most famous hop in the American craft brewing revolution. \"\n    \"Developed in Oregon, it has a unique floral and citrus character that defined the taste \"\n    \"of the classic American Pale Ale.\\n\\n\"\n    \"Its moderate bitterness and vibrant aroma, with notes of grapefruit, orange, and light \"\n    \"floral undertones, make it incredibly versatile. Cascade is excellent for both bittering \"\n    \"and late kettle additions or for dry hopping.\\n\\n\"\n    \"This hop is a reliable choice for brewers looking to create a refreshing, balanced, and \"",
+        "detail": "products.service.cascade-hops",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.cascade-hops",
+        "description": "products.service.cascade-hops",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Cascade is arguably the most famous hop in the American craft brewing revolution. \"\n    \"Developed in Oregon, it has a unique floral and citrus character that defined the taste \"\n    \"of the classic American Pale Ale.\\n\\n\"\n    \"Its moderate bitterness and vibrant aroma, with notes of grapefruit, orange, and light \"\n    \"floral undertones, make it incredibly versatile. Cascade is excellent for both bittering \"\n    \"and late kettle additions or for dry hopping.\\n\\n\"\n    \"This hop is a reliable choice for brewers looking to create a refreshing, balanced, and \"\n    \"recognizable ale.\"",
+        "detail": "products.service.cascade-hops",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.cascade-hops",
+        "description": "products.service.cascade-hops",
+        "peekOfCode": "description = (\n    \"Cascade is arguably the most famous hop in the American craft brewing revolution. \"\n    \"Developed in Oregon, it has a unique floral and citrus character that defined the taste \"\n    \"of the classic American Pale Ale.\\n\\n\"\n    \"Its moderate bitterness and vibrant aroma, with notes of grapefruit, orange, and light \"\n    \"floral undertones, make it incredibly versatile. Cascade is excellent for both bittering \"\n    \"and late kettle additions or for dry hopping.\\n\\n\"\n    \"This hop is a reliable choice for brewers looking to create a refreshing, balanced, and \"\n    \"recognizable ale.\"\n)",
+        "detail": "products.service.cascade-hops",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.cascade-hops",
+        "description": "products.service.cascade-hops",
+        "peekOfCode": "price = 7.49\nstock = 100\nis_active = True\npicture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.cascade-hops",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.cascade-hops",
+        "description": "products.service.cascade-hops",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.cascade-hops",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.cascade-hops",
+        "description": "products.service.cascade-hops",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.cascade-hops",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.cascade-hops",
+        "description": "products.service.cascade-hops",
+        "peekOfCode": "picture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.cascade-hops",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.centennial-hops",
+        "description": "products.service.centennial-hops",
+        "peekOfCode": "name = \"Centennial Hops\"\nslug = slugify(name)\ndescription = (\n    \"Centennial is a classic American hop often referred to as \\\"Super Cascade\\\" due to its \"\n    \"similar citrus profile but with a higher intensity and alpha acid content. It is one of \"\n    \"the \\\"Three Cs\\\" (along with Cascade and Columbus) that defined the flavor of American IPAs.\\n\\n\"\n    \"The aroma of Centennial is powerful, with bright notes of lemon, grapefruit, and pronounced \"\n    \"floral undertones. Unlike Cascade, it is less spicy and more \\\"clean\\\" in its citrus expression. \"\n    \"Thanks to its high alpha acid content, it is excellent for both bittering and creating an \"\n    \"intense aroma.\\n\\n\"",
+        "detail": "products.service.centennial-hops",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.centennial-hops",
+        "description": "products.service.centennial-hops",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Centennial is a classic American hop often referred to as \\\"Super Cascade\\\" due to its \"\n    \"similar citrus profile but with a higher intensity and alpha acid content. It is one of \"\n    \"the \\\"Three Cs\\\" (along with Cascade and Columbus) that defined the flavor of American IPAs.\\n\\n\"\n    \"The aroma of Centennial is powerful, with bright notes of lemon, grapefruit, and pronounced \"\n    \"floral undertones. Unlike Cascade, it is less spicy and more \\\"clean\\\" in its citrus expression. \"\n    \"Thanks to its high alpha acid content, it is excellent for both bittering and creating an \"\n    \"intense aroma.\\n\\n\"\n    \"This is an extremely versatile hop, perfect for American Pale Ales, IPAs, and Double IPAs, \"",
+        "detail": "products.service.centennial-hops",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.centennial-hops",
+        "description": "products.service.centennial-hops",
+        "peekOfCode": "description = (\n    \"Centennial is a classic American hop often referred to as \\\"Super Cascade\\\" due to its \"\n    \"similar citrus profile but with a higher intensity and alpha acid content. It is one of \"\n    \"the \\\"Three Cs\\\" (along with Cascade and Columbus) that defined the flavor of American IPAs.\\n\\n\"\n    \"The aroma of Centennial is powerful, with bright notes of lemon, grapefruit, and pronounced \"\n    \"floral undertones. Unlike Cascade, it is less spicy and more \\\"clean\\\" in its citrus expression. \"\n    \"Thanks to its high alpha acid content, it is excellent for both bittering and creating an \"\n    \"intense aroma.\\n\\n\"\n    \"This is an extremely versatile hop, perfect for American Pale Ales, IPAs, and Double IPAs, \"\n    \"giving them a bright and recognizable character.\"",
+        "detail": "products.service.centennial-hops",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.centennial-hops",
+        "description": "products.service.centennial-hops",
+        "peekOfCode": "price = 6.20\nstock = 100\nis_active = True\npicture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.centennial-hops",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.centennial-hops",
+        "description": "products.service.centennial-hops",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.centennial-hops",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.centennial-hops",
+        "description": "products.service.centennial-hops",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.centennial-hops",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.centennial-hops",
+        "description": "products.service.centennial-hops",
+        "peekOfCode": "picture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.centennial-hops",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.citra-hops",
+        "description": "products.service.citra-hops",
+        "peekOfCode": "name = \"Citra Hops\"\nslug = slugify(name)\ndescription = (\n    \"Citra is one of the most sought-after and recognizable hop varieties in the world of craft brewing, \"\n    \"famous for its bright and multifaceted citrus aroma. Developed in the USA, this variety is ideal for \"\n    \"IPAs, Pale Ales, and other styles where a distinct fruity profile is desired.\\n\\n\"\n    \"Citra boasts a high alpha acid content, making it excellent for both bitterness and intense aroma. \"\n    \"It imparts notes of grapefruit, lime, passion fruit, lychee, and melon to beer, creating a unique \"\n    \"tropical bouquet.\\n\\n\"\n    \"Our T-90 pellets are hermetically sealed to preserve freshness and maximum aromatics.\"",
+        "detail": "products.service.citra-hops",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.citra-hops",
+        "description": "products.service.citra-hops",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Citra is one of the most sought-after and recognizable hop varieties in the world of craft brewing, \"\n    \"famous for its bright and multifaceted citrus aroma. Developed in the USA, this variety is ideal for \"\n    \"IPAs, Pale Ales, and other styles where a distinct fruity profile is desired.\\n\\n\"\n    \"Citra boasts a high alpha acid content, making it excellent for both bitterness and intense aroma. \"\n    \"It imparts notes of grapefruit, lime, passion fruit, lychee, and melon to beer, creating a unique \"\n    \"tropical bouquet.\\n\\n\"\n    \"Our T-90 pellets are hermetically sealed to preserve freshness and maximum aromatics.\"\n)",
+        "detail": "products.service.citra-hops",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.citra-hops",
+        "description": "products.service.citra-hops",
+        "peekOfCode": "description = (\n    \"Citra is one of the most sought-after and recognizable hop varieties in the world of craft brewing, \"\n    \"famous for its bright and multifaceted citrus aroma. Developed in the USA, this variety is ideal for \"\n    \"IPAs, Pale Ales, and other styles where a distinct fruity profile is desired.\\n\\n\"\n    \"Citra boasts a high alpha acid content, making it excellent for both bitterness and intense aroma. \"\n    \"It imparts notes of grapefruit, lime, passion fruit, lychee, and melon to beer, creating a unique \"\n    \"tropical bouquet.\\n\\n\"\n    \"Our T-90 pellets are hermetically sealed to preserve freshness and maximum aromatics.\"\n)\nprice = 5.99",
+        "detail": "products.service.citra-hops",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.citra-hops",
+        "description": "products.service.citra-hops",
+        "peekOfCode": "price = 5.99\nstock = 100\nis_active = True\npicture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.citra-hops",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.citra-hops",
+        "description": "products.service.citra-hops",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.citra-hops",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.citra-hops",
+        "description": "products.service.citra-hops",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.citra-hops",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.citra-hops",
+        "description": "products.service.citra-hops",
+        "peekOfCode": "picture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.citra-hops",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.imperial-yeast",
+        "description": "products.service.imperial-yeast",
+        "peekOfCode": "name = \"Imperial Organic Yeast A07\"\nslug = slugify(name)\ndescription = (\n    \"Imperial Organic Yeast A07 \\\"Flagship\\\" is a versatile and extremely popular liquid yeast, \"\n    \"known for its ability to create balanced ales with a light fruity character. This strain is \"\n    \"a true workhorse and is perfect for most American beer styles.\\n\\n\"\n    \"\\\"Flagship\\\" provides a clean fermentation with light ester notes of citrus and stone fruit \"\n    \"that complement, rather than overpower, the hop and malt profile. It has good attenuation and \"\n    \"moderate flocculation, leaving behind a soft and smooth mouthfeel.\\n\\n\"\n    \"Thanks to the high cell count per package (200 billion), this yeast does not require a starter \"",
+        "detail": "products.service.imperial-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.imperial-yeast",
+        "description": "products.service.imperial-yeast",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Imperial Organic Yeast A07 \\\"Flagship\\\" is a versatile and extremely popular liquid yeast, \"\n    \"known for its ability to create balanced ales with a light fruity character. This strain is \"\n    \"a true workhorse and is perfect for most American beer styles.\\n\\n\"\n    \"\\\"Flagship\\\" provides a clean fermentation with light ester notes of citrus and stone fruit \"\n    \"that complement, rather than overpower, the hop and malt profile. It has good attenuation and \"\n    \"moderate flocculation, leaving behind a soft and smooth mouthfeel.\\n\\n\"\n    \"Thanks to the high cell count per package (200 billion), this yeast does not require a starter \"\n    \"for most standard batches of beer, making it a convenient and reliable choice.\"",
+        "detail": "products.service.imperial-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.imperial-yeast",
+        "description": "products.service.imperial-yeast",
+        "peekOfCode": "description = (\n    \"Imperial Organic Yeast A07 \\\"Flagship\\\" is a versatile and extremely popular liquid yeast, \"\n    \"known for its ability to create balanced ales with a light fruity character. This strain is \"\n    \"a true workhorse and is perfect for most American beer styles.\\n\\n\"\n    \"\\\"Flagship\\\" provides a clean fermentation with light ester notes of citrus and stone fruit \"\n    \"that complement, rather than overpower, the hop and malt profile. It has good attenuation and \"\n    \"moderate flocculation, leaving behind a soft and smooth mouthfeel.\\n\\n\"\n    \"Thanks to the high cell count per package (200 billion), this yeast does not require a starter \"\n    \"for most standard batches of beer, making it a convenient and reliable choice.\"\n)",
+        "detail": "products.service.imperial-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.imperial-yeast",
+        "description": "products.service.imperial-yeast",
+        "peekOfCode": "price = 8.99\nstock = 100\nis_active = True\npicture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.imperial-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.imperial-yeast",
+        "description": "products.service.imperial-yeast",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.imperial-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.imperial-yeast",
+        "description": "products.service.imperial-yeast",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.imperial-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.imperial-yeast",
+        "description": "products.service.imperial-yeast",
+        "peekOfCode": "picture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.imperial-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.maris-otter-malt",
+        "description": "products.service.maris-otter-malt",
+        "peekOfCode": "name = \"Maris Otter Pale Malt\"\nslug = slugify(name)\ndescription = (\n    \"Maris Otter Pale Malt is the cornerstone of British brewing heritage, a revered base malt \"\n    \"prized by brewers worldwide for its exceptional quality and flavor.\\n\\n\"\n    \"It provides a rich, slightly sweet, and biscuity malt backbone that is more complex than \"\n    \"standard 2-row malts, with subtle nutty undertones that enhance any beer style. Perfect for \"\n    \"creating authentic British ales such as Bitters, IPAs, Porters, and Stouts.\\n\\n\"\n    \"Its excellent processing characteristics and high extract yield make it a reliable and \"\n    \"efficient choice for both novice and experienced brewers.\"",
+        "detail": "products.service.maris-otter-malt",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.maris-otter-malt",
+        "description": "products.service.maris-otter-malt",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Maris Otter Pale Malt is the cornerstone of British brewing heritage, a revered base malt \"\n    \"prized by brewers worldwide for its exceptional quality and flavor.\\n\\n\"\n    \"It provides a rich, slightly sweet, and biscuity malt backbone that is more complex than \"\n    \"standard 2-row malts, with subtle nutty undertones that enhance any beer style. Perfect for \"\n    \"creating authentic British ales such as Bitters, IPAs, Porters, and Stouts.\\n\\n\"\n    \"Its excellent processing characteristics and high extract yield make it a reliable and \"\n    \"efficient choice for both novice and experienced brewers.\"\n)",
+        "detail": "products.service.maris-otter-malt",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.maris-otter-malt",
+        "description": "products.service.maris-otter-malt",
+        "peekOfCode": "description = (\n    \"Maris Otter Pale Malt is the cornerstone of British brewing heritage, a revered base malt \"\n    \"prized by brewers worldwide for its exceptional quality and flavor.\\n\\n\"\n    \"It provides a rich, slightly sweet, and biscuity malt backbone that is more complex than \"\n    \"standard 2-row malts, with subtle nutty undertones that enhance any beer style. Perfect for \"\n    \"creating authentic British ales such as Bitters, IPAs, Porters, and Stouts.\\n\\n\"\n    \"Its excellent processing characteristics and high extract yield make it a reliable and \"\n    \"efficient choice for both novice and experienced brewers.\"\n)\nprice = 2.50",
+        "detail": "products.service.maris-otter-malt",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.maris-otter-malt",
+        "description": "products.service.maris-otter-malt",
+        "peekOfCode": "price = 2.50\nstock = 100\nis_active = True\npicture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.maris-otter-malt",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.maris-otter-malt",
+        "description": "products.service.maris-otter-malt",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.maris-otter-malt",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.maris-otter-malt",
+        "description": "products.service.maris-otter-malt",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.maris-otter-malt",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.maris-otter-malt",
+        "description": "products.service.maris-otter-malt",
+        "peekOfCode": "picture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.maris-otter-malt",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.mosaic-hops",
+        "description": "products.service.mosaic-hops",
+        "peekOfCode": "name = \"Mosaic Hops\"\nslug = slugify(name)\ndescription = (\n    \"Mosaic is one of the most vibrant and multifaceted hops on the modern craft scene. \"\n    \"As a \\\"daughter\\\" of Simcoe, it inherited the best from its lineage and added a unique \"\n    \"palette of aromas, making it a true aromatic bomb.\\n\\n\"\n    \"The name \\\"Mosaic\\\" is fully justified: it creates a complex mosaic of flavors and aromas, \"\n    \"including notes of tropical fruits (mango, guava), citrus (tangerine), berries (blueberry), \"\n    \"stone fruits (peach), and even light pine and earthy undertones.\\n\\n\"\n    \"This hop is ideal for dry hopping in IPA and Pale Ale styles, where it can unleash its full \"",
+        "detail": "products.service.mosaic-hops",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.mosaic-hops",
+        "description": "products.service.mosaic-hops",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Mosaic is one of the most vibrant and multifaceted hops on the modern craft scene. \"\n    \"As a \\\"daughter\\\" of Simcoe, it inherited the best from its lineage and added a unique \"\n    \"palette of aromas, making it a true aromatic bomb.\\n\\n\"\n    \"The name \\\"Mosaic\\\" is fully justified: it creates a complex mosaic of flavors and aromas, \"\n    \"including notes of tropical fruits (mango, guava), citrus (tangerine), berries (blueberry), \"\n    \"stone fruits (peach), and even light pine and earthy undertones.\\n\\n\"\n    \"This hop is ideal for dry hopping in IPA and Pale Ale styles, where it can unleash its full \"\n    \"potential, creating a juicy, vibrant, and unforgettable beer.\"",
+        "detail": "products.service.mosaic-hops",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.mosaic-hops",
+        "description": "products.service.mosaic-hops",
+        "peekOfCode": "description = (\n    \"Mosaic is one of the most vibrant and multifaceted hops on the modern craft scene. \"\n    \"As a \\\"daughter\\\" of Simcoe, it inherited the best from its lineage and added a unique \"\n    \"palette of aromas, making it a true aromatic bomb.\\n\\n\"\n    \"The name \\\"Mosaic\\\" is fully justified: it creates a complex mosaic of flavors and aromas, \"\n    \"including notes of tropical fruits (mango, guava), citrus (tangerine), berries (blueberry), \"\n    \"stone fruits (peach), and even light pine and earthy undertones.\\n\\n\"\n    \"This hop is ideal for dry hopping in IPA and Pale Ale styles, where it can unleash its full \"\n    \"potential, creating a juicy, vibrant, and unforgettable beer.\"\n)",
+        "detail": "products.service.mosaic-hops",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.mosaic-hops",
+        "description": "products.service.mosaic-hops",
+        "peekOfCode": "price = 9.50\nstock = 100\nis_active = True\npicture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.mosaic-hops",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.mosaic-hops",
+        "description": "products.service.mosaic-hops",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.mosaic-hops",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.mosaic-hops",
+        "description": "products.service.mosaic-hops",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.mosaic-hops",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.mosaic-hops",
+        "description": "products.service.mosaic-hops",
+        "peekOfCode": "picture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.mosaic-hops",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.pilsner-malt",
+        "description": "products.service.pilsner-malt",
+        "peekOfCode": "name = \"Pilsner Malt\"\nslug = slugify(name)\ndescription = (\n    \"Pilsner Malt is the lightest base malt, forming the foundation for classic German and Czech \"\n    \"pilsners, as well as a multitude of other light lagers and ales. It is produced from high-quality \"\n    \"two-row barley and undergoes gentle kilning at low temperatures.\\n\\n\"\n    \"This malt imparts a very light, straw-like color and a clean, slightly sweet, grainy flavor to the \"\n    \"beer. Its neutral character allows the aroma of hops and the work of the yeast to fully express \"\n    \"themselves, making it an ideal base for beers where purity and crispness are paramount.\\n\\n\"\n    \"Thanks to its high enzymatic activity, Pilsner Malt is excellent for mashes with a large proportion \"",
+        "detail": "products.service.pilsner-malt",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.pilsner-malt",
+        "description": "products.service.pilsner-malt",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Pilsner Malt is the lightest base malt, forming the foundation for classic German and Czech \"\n    \"pilsners, as well as a multitude of other light lagers and ales. It is produced from high-quality \"\n    \"two-row barley and undergoes gentle kilning at low temperatures.\\n\\n\"\n    \"This malt imparts a very light, straw-like color and a clean, slightly sweet, grainy flavor to the \"\n    \"beer. Its neutral character allows the aroma of hops and the work of the yeast to fully express \"\n    \"themselves, making it an ideal base for beers where purity and crispness are paramount.\\n\\n\"\n    \"Thanks to its high enzymatic activity, Pilsner Malt is excellent for mashes with a large proportion \"\n    \"of unmalted grains.\"",
+        "detail": "products.service.pilsner-malt",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.pilsner-malt",
+        "description": "products.service.pilsner-malt",
+        "peekOfCode": "description = (\n    \"Pilsner Malt is the lightest base malt, forming the foundation for classic German and Czech \"\n    \"pilsners, as well as a multitude of other light lagers and ales. It is produced from high-quality \"\n    \"two-row barley and undergoes gentle kilning at low temperatures.\\n\\n\"\n    \"This malt imparts a very light, straw-like color and a clean, slightly sweet, grainy flavor to the \"\n    \"beer. Its neutral character allows the aroma of hops and the work of the yeast to fully express \"\n    \"themselves, making it an ideal base for beers where purity and crispness are paramount.\\n\\n\"\n    \"Thanks to its high enzymatic activity, Pilsner Malt is excellent for mashes with a large proportion \"\n    \"of unmalted grains.\"\n)",
+        "detail": "products.service.pilsner-malt",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.pilsner-malt",
+        "description": "products.service.pilsner-malt",
+        "peekOfCode": "price = 2.20\nstock = 100\nis_active = True\npicture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.pilsner-malt",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.pilsner-malt",
+        "description": "products.service.pilsner-malt",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.pilsner-malt",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.pilsner-malt",
+        "description": "products.service.pilsner-malt",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.pilsner-malt",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.pilsner-malt",
+        "description": "products.service.pilsner-malt",
+        "peekOfCode": "picture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.pilsner-malt",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.saaz-hops",
+        "description": "products.service.saaz-hops",
+        "peekOfCode": "name = \"Saaz Hops\"\nslug = slugify(name)\ndescription = (\n    \"Saaz is a noble hop, the heart and soul of classic Bohemian and Czech pilsners. \"\n    \"Grown in the Zatec region of the Czech Republic, it possesses a delicate and refined \"\n    \"aromatic profile that is unmistakable.\\n\\n\"\n    \"Its aroma is characterized by soft, spicy, herbal, and floral notes. Saaz is primarily \"\n    \"used for aroma rather than bitterness, as its alpha acid content is low. It imparts a \"\n    \"classic European elegance and clean taste to the beer.\\n\\n\"\n    \"If you aim to brew an authentic Czech pilsner, European lager, or Belgian ale, Saaz is \"",
+        "detail": "products.service.saaz-hops",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.saaz-hops",
+        "description": "products.service.saaz-hops",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Saaz is a noble hop, the heart and soul of classic Bohemian and Czech pilsners. \"\n    \"Grown in the Zatec region of the Czech Republic, it possesses a delicate and refined \"\n    \"aromatic profile that is unmistakable.\\n\\n\"\n    \"Its aroma is characterized by soft, spicy, herbal, and floral notes. Saaz is primarily \"\n    \"used for aroma rather than bitterness, as its alpha acid content is low. It imparts a \"\n    \"classic European elegance and clean taste to the beer.\\n\\n\"\n    \"If you aim to brew an authentic Czech pilsner, European lager, or Belgian ale, Saaz is \"\n    \"an indispensable ingredient.\"",
+        "detail": "products.service.saaz-hops",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.saaz-hops",
+        "description": "products.service.saaz-hops",
+        "peekOfCode": "description = (\n    \"Saaz is a noble hop, the heart and soul of classic Bohemian and Czech pilsners. \"\n    \"Grown in the Zatec region of the Czech Republic, it possesses a delicate and refined \"\n    \"aromatic profile that is unmistakable.\\n\\n\"\n    \"Its aroma is characterized by soft, spicy, herbal, and floral notes. Saaz is primarily \"\n    \"used for aroma rather than bitterness, as its alpha acid content is low. It imparts a \"\n    \"classic European elegance and clean taste to the beer.\\n\\n\"\n    \"If you aim to brew an authentic Czech pilsner, European lager, or Belgian ale, Saaz is \"\n    \"an indispensable ingredient.\"\n)",
+        "detail": "products.service.saaz-hops",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.saaz-hops",
+        "description": "products.service.saaz-hops",
+        "peekOfCode": "price = 4.75\nstock = 100\nis_active = True\npicture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.saaz-hops",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.saaz-hops",
+        "description": "products.service.saaz-hops",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.saaz-hops",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.saaz-hops",
+        "description": "products.service.saaz-hops",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.saaz-hops",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.saaz-hops",
+        "description": "products.service.saaz-hops",
+        "peekOfCode": "picture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.saaz-hops",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.safale-us05-yeast",
+        "description": "products.service.safale-us05-yeast",
+        "peekOfCode": "name = \"SafAle US-05 Dry Ale Yeast\"\nslug = slugify(name)\ndescription = (\n    \"SafAle US-05 is the most famous and popular American ale yeast in the world. \"\n    \"This strain is renowned for its ability to produce clean, crisp beers with a neutral \"\n    \"flavor profile, allowing the hop and malt character to shine through.\\n\\n\"\n    \"With its high attenuation and high flocculation, US-05 is ideal for a wide range of \"\n    \"American ale styles, from West Coast IPAs to American Pale Ales and Cream Ales. It forms \"\n    \"a firm sediment, making racking and clarification easier.\\n\\n\"\n    \"Reliable, easy to use, and available in a dry format, this yeast is the number one choice \"",
+        "detail": "products.service.safale-us05-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.safale-us05-yeast",
+        "description": "products.service.safale-us05-yeast",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"SafAle US-05 is the most famous and popular American ale yeast in the world. \"\n    \"This strain is renowned for its ability to produce clean, crisp beers with a neutral \"\n    \"flavor profile, allowing the hop and malt character to shine through.\\n\\n\"\n    \"With its high attenuation and high flocculation, US-05 is ideal for a wide range of \"\n    \"American ale styles, from West Coast IPAs to American Pale Ales and Cream Ales. It forms \"\n    \"a firm sediment, making racking and clarification easier.\\n\\n\"\n    \"Reliable, easy to use, and available in a dry format, this yeast is the number one choice \"\n    \"for brewers seeking consistent and predictable results.\"",
+        "detail": "products.service.safale-us05-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.safale-us05-yeast",
+        "description": "products.service.safale-us05-yeast",
+        "peekOfCode": "description = (\n    \"SafAle US-05 is the most famous and popular American ale yeast in the world. \"\n    \"This strain is renowned for its ability to produce clean, crisp beers with a neutral \"\n    \"flavor profile, allowing the hop and malt character to shine through.\\n\\n\"\n    \"With its high attenuation and high flocculation, US-05 is ideal for a wide range of \"\n    \"American ale styles, from West Coast IPAs to American Pale Ales and Cream Ales. It forms \"\n    \"a firm sediment, making racking and clarification easier.\\n\\n\"\n    \"Reliable, easy to use, and available in a dry format, this yeast is the number one choice \"\n    \"for brewers seeking consistent and predictable results.\"\n)",
+        "detail": "products.service.safale-us05-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.safale-us05-yeast",
+        "description": "products.service.safale-us05-yeast",
+        "peekOfCode": "price = 3.25\nstock = 100\nis_active = True\npicture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.safale-us05-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.safale-us05-yeast",
+        "description": "products.service.safale-us05-yeast",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.safale-us05-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.safale-us05-yeast",
+        "description": "products.service.safale-us05-yeast",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.safale-us05-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.safale-us05-yeast",
+        "description": "products.service.safale-us05-yeast",
+        "peekOfCode": "picture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.safale-us05-yeast",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.unmalted-wheat",
+        "description": "products.service.unmalted-wheat",
+        "peekOfCode": "name = \"Unmalted Wheat\"\nslug = slugify(name)\ndescription = (\n    \"Unmalted wheat is the secret ingredient behind the classic hazy, refreshing character \"\n    \"of Belgian Witbier. Unlike malted wheat, this is raw, unprocessed grain that imparts a \"\n    \"unique texture and flavor to the beer.\\n\\n\"\n    \"Using unmalted wheat provides the beer with its characteristic light haze, a smooth, \"\n    \"silky body, and a subtle, bready-grainy flavor that doesn't overpower the delicate notes \"\n    \"of coriander and orange peel. The high protein content of this grain also contributes to \"\n    \"a dense and persistent head.\\n\\n\"",
+        "detail": "products.service.unmalted-wheat",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.unmalted-wheat",
+        "description": "products.service.unmalted-wheat",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Unmalted wheat is the secret ingredient behind the classic hazy, refreshing character \"\n    \"of Belgian Witbier. Unlike malted wheat, this is raw, unprocessed grain that imparts a \"\n    \"unique texture and flavor to the beer.\\n\\n\"\n    \"Using unmalted wheat provides the beer with its characteristic light haze, a smooth, \"\n    \"silky body, and a subtle, bready-grainy flavor that doesn't overpower the delicate notes \"\n    \"of coriander and orange peel. The high protein content of this grain also contributes to \"\n    \"a dense and persistent head.\\n\\n\"\n    \"This ingredient is a must-have for any brewer aiming to recreate an authentic Belgian \"",
+        "detail": "products.service.unmalted-wheat",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.unmalted-wheat",
+        "description": "products.service.unmalted-wheat",
+        "peekOfCode": "description = (\n    \"Unmalted wheat is the secret ingredient behind the classic hazy, refreshing character \"\n    \"of Belgian Witbier. Unlike malted wheat, this is raw, unprocessed grain that imparts a \"\n    \"unique texture and flavor to the beer.\\n\\n\"\n    \"Using unmalted wheat provides the beer with its characteristic light haze, a smooth, \"\n    \"silky body, and a subtle, bready-grainy flavor that doesn't overpower the delicate notes \"\n    \"of coriander and orange peel. The high protein content of this grain also contributes to \"\n    \"a dense and persistent head.\\n\\n\"\n    \"This ingredient is a must-have for any brewer aiming to recreate an authentic Belgian \"\n    \"Witbier or to add complexity and body to other styles, such as Lambics.\"",
+        "detail": "products.service.unmalted-wheat",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.unmalted-wheat",
+        "description": "products.service.unmalted-wheat",
+        "peekOfCode": "price = 1.80\nstock = 100\nis_active = True\npicture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.unmalted-wheat",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.unmalted-wheat",
+        "description": "products.service.unmalted-wheat",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.unmalted-wheat",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.unmalted-wheat",
+        "description": "products.service.unmalted-wheat",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.unmalted-wheat",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.unmalted-wheat",
+        "description": "products.service.unmalted-wheat",
+        "peekOfCode": "picture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.unmalted-wheat",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "products.service.west-coast-ipa-kit",
+        "description": "products.service.west-coast-ipa-kit",
+        "peekOfCode": "name = \"West Coast IPA - All-Grain Kit\"\nslug = slugify(name)\ndescription = (\n    \"Brew a craft brewing classic with our \\\"West Coast IPA - All-Grain Kit\\\"! This kit contains \"\n    \"all the necessary ingredients to create a bright, bitter, and incredibly aromatic IPA in \"\n    \"the style of the US West Coast.\\n\\n\"\n    \"We've selected the perfect combination of malts to achieve a clean, dry body that serves as \"\n    \"an excellent base for a hop explosion. The kit includes a powerful combination of Centennial, \"\n    \"Simcoe, and Columbus hops, which provide a burst of citrus, pine, and resinous notes \"\n    \"characteristic of this style.\\n\\n\"",
+        "detail": "products.service.west-coast-ipa-kit",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "products.service.west-coast-ipa-kit",
+        "description": "products.service.west-coast-ipa-kit",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Brew a craft brewing classic with our \\\"West Coast IPA - All-Grain Kit\\\"! This kit contains \"\n    \"all the necessary ingredients to create a bright, bitter, and incredibly aromatic IPA in \"\n    \"the style of the US West Coast.\\n\\n\"\n    \"We've selected the perfect combination of malts to achieve a clean, dry body that serves as \"\n    \"an excellent base for a hop explosion. The kit includes a powerful combination of Centennial, \"\n    \"Simcoe, and Columbus hops, which provide a burst of citrus, pine, and resinous notes \"\n    \"characteristic of this style.\\n\\n\"\n    \"This kit is your ticket to the world of true West Coast IPA. It comes with detailed step-by-step \"",
+        "detail": "products.service.west-coast-ipa-kit",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "products.service.west-coast-ipa-kit",
+        "description": "products.service.west-coast-ipa-kit",
+        "peekOfCode": "description = (\n    \"Brew a craft brewing classic with our \\\"West Coast IPA - All-Grain Kit\\\"! This kit contains \"\n    \"all the necessary ingredients to create a bright, bitter, and incredibly aromatic IPA in \"\n    \"the style of the US West Coast.\\n\\n\"\n    \"We've selected the perfect combination of malts to achieve a clean, dry body that serves as \"\n    \"an excellent base for a hop explosion. The kit includes a powerful combination of Centennial, \"\n    \"Simcoe, and Columbus hops, which provide a burst of citrus, pine, and resinous notes \"\n    \"characteristic of this style.\\n\\n\"\n    \"This kit is your ticket to the world of true West Coast IPA. It comes with detailed step-by-step \"\n    \"instructions to guide you through every stage, from mashing to bottling.\"",
+        "detail": "products.service.west-coast-ipa-kit",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "products.service.west-coast-ipa-kit",
+        "description": "products.service.west-coast-ipa-kit",
+        "peekOfCode": "price = 60.00\nstock = 50\nis_active = True\npicture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "products.service.west-coast-ipa-kit",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "products.service.west-coast-ipa-kit",
+        "description": "products.service.west-coast-ipa-kit",
+        "peekOfCode": "stock = 50\nis_active = True\npicture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "products.service.west-coast-ipa-kit",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "products.service.west-coast-ipa-kit",
+        "description": "products.service.west-coast-ipa-kit",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "products.service.west-coast-ipa-kit",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "products.service.west-coast-ipa-kit",
+        "description": "products.service.west-coast-ipa-kit",
+        "peekOfCode": "picture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "products.service.west-coast-ipa-kit",
+        "documentation": {}
+    },
+    {
         "label": "CategoryAdmin",
         "kind": 6,
         "importPath": "products.admin",
@@ -1452,8 +2483,35 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Product(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    category: Category = models.ForeignKey(Category, on_delete=models.CASCADE)  # type: ignore[assignment]\n    description: str = models.TextField()  # type: ignore[assignment]\n    price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]\n    stock: int = models.PositiveIntegerField(default=0)  # type: ignore[assignment]\n    is_active: bool = models.BooleanField(default=True)  # type: ignore[assignment]\n    def __str__(self) -> str:\n        return self.name",
+        "peekOfCode": "class Product(models.Model):\n    name: str = models.CharField(max_length=200)  # type: ignore[assignment]\n    slug: str = models.SlugField(unique=True)  # type: ignore[assignment]\n    category: Category = models.ForeignKey(Category, on_delete=models.CASCADE)  # type: ignore[assignment]\n    description: str = models.TextField()  # type: ignore[assignment]\n    price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]\n    stock: int = models.PositiveIntegerField(default=0)  # type: ignore[assignment]\n    is_active: bool = models.BooleanField(default=True)  # type: ignore[assignment]\n    picture_url: str = models.URLField(max_length=50, blank=True, default=\"\")  # type: ignore[assignment]\n    def __str__(self) -> str:",
         "detail": "products.models",
+        "documentation": {}
+    },
+    {
+        "label": "CategorySerializer",
+        "kind": 6,
+        "importPath": "products.serializers",
+        "description": "products.serializers",
+        "peekOfCode": "class CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = \"__all__\"\nclass ReviewSerializer(serializers.ModelSerializer):\n    user = serializers.ReadOnlyField(source=\"user.username\")\n    class Meta:\n        model = Review\n        fields = [\"id\", \"user\", \"rating\", \"text\", \"created_at\"]\nclass ProductSerializer(serializers.ModelSerializer):",
+        "detail": "products.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ReviewSerializer",
+        "kind": 6,
+        "importPath": "products.serializers",
+        "description": "products.serializers",
+        "peekOfCode": "class ReviewSerializer(serializers.ModelSerializer):\n    user = serializers.ReadOnlyField(source=\"user.username\")\n    class Meta:\n        model = Review\n        fields = [\"id\", \"user\", \"rating\", \"text\", \"created_at\"]\nclass ProductSerializer(serializers.ModelSerializer):\n    category = CategorySerializer(read_only=True)\n    reviews = ReviewSerializer(many=True, read_only=True)\n    class Meta:\n        model = Product",
+        "detail": "products.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ProductSerializer",
+        "kind": 6,
+        "importPath": "products.serializers",
+        "description": "products.serializers",
+        "peekOfCode": "class ProductSerializer(serializers.ModelSerializer):\n    category = CategorySerializer(read_only=True)\n    reviews = ReviewSerializer(many=True, read_only=True)\n    class Meta:\n        model = Product\n        fields = [\n            \"id\",\n            \"name\",\n            \"slug\",\n            \"category\",",
+        "detail": "products.serializers",
         "documentation": {}
     },
     {
@@ -1470,7 +2528,7 @@
         "kind": 6,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "class HomeView(TemplateView):\n    template_name = \"home.html\"\n    def get_context_data(self: Self, **kwargs: Any) -> dict[str, Any]:\n        context = super().get_context_data(**kwargs)\n        context[\"features_products\"] = Product.objects.filter(is_active=True)[:5]\n        return context\nclass ProductListView(ViewList):\n    model = Product\n    template_name = \"products.html\"\n    context_object_name = \"products\"",
+        "peekOfCode": "class HomeView(TemplateView):\n    template_name = \"home.html\"\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        context[\"featured_products\"] = Product.objects.filter(is_active=True)[\n            :5\n        ]  # 5 активных продуктов для главной\n        return context\nclass ProductListView(ListView):\n    model = Product",
         "detail": "products.views",
         "documentation": {}
     },
@@ -1479,7 +2537,7 @@
         "kind": 6,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "class ProductListView(ViewList):\n    model = Product\n    template_name = \"products.html\"\n    context_object_name = \"products\"\n    queryset = Product.objects.filter(is_active=True)\n    def get_context_data(self: Self, **kwargs: Any) -> dict[str, Any]:\n        context = super().get_context_data(**kwargs)\n        context[\"categories\"] = Category.objects.all()\n        return context\nclass ProductDetailView(TemplateView):",
+        "peekOfCode": "class ProductListView(ListView):\n    model = Product\n    template_name = \"home.html\"\n    context_object_name = \"products\"\n    def get_queryset(self) -> QuerySet[Product]:\n        queryset = Product.objects.filter(is_active=True).select_related(\"category\")\n        query = self.request.GET.get(\"search\")\n        if query:\n            queryset = queryset.filter(\n                Q(name__icontains=query) | Q(description__icontains=query)",
         "detail": "products.views",
         "documentation": {}
     },
@@ -1488,7 +2546,7 @@
         "kind": 6,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "class ProductDetailView(TemplateView):\n    model = Product\n    # template_name = \"products.html\"\n    template_name = \"product-citra-hops.html\"\n    slug_field = \"slug\"\n    context_object_name = \"product\"\n    def get_template_names(self):\n        # return [f\"product-{self.object.slug}.html\"]\n        return \"product-citra-hops.html\"\nclass GuidesRecipesView(TemplateView):",
+        "peekOfCode": "class ProductDetailView(DetailView):\n    model = Product\n    template_name = \"product_detail.html\"\n    context_object_name = \"product\"\nclass GuidesRecipesView(TemplateView):\n    template_name = \"guides-recipes.html\"\nclass ProductViewSet(viewsets.ModelViewSet):\n    \"\"\"API эндпоинт для просмотра и поиска товаров.\"\"\"\n    serializer_class = ProductSerializer\n    filterset_fields = [\"category\", \"price\"]",
         "detail": "products.views",
         "documentation": {}
     },
@@ -1497,7 +2555,16 @@
         "kind": 6,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "class GuidesRecipesView(TemplateView):\n    template_name = \"guides-recipes.html\"",
+        "peekOfCode": "class GuidesRecipesView(TemplateView):\n    template_name = \"guides-recipes.html\"\nclass ProductViewSet(viewsets.ModelViewSet):\n    \"\"\"API эндпоинт для просмотра и поиска товаров.\"\"\"\n    serializer_class = ProductSerializer\n    filterset_fields = [\"category\", \"price\"]\n    search_fields = [\"name\", \"description\"]\n    def get_queryset(self) -> QuerySet[Product]:\n        return Product.objects.filter(is_active=True).select_related(\"category\")",
+        "detail": "products.views",
+        "documentation": {}
+    },
+    {
+        "label": "ProductViewSet",
+        "kind": 6,
+        "importPath": "products.views",
+        "description": "products.views",
+        "peekOfCode": "class ProductViewSet(viewsets.ModelViewSet):\n    \"\"\"API эндпоинт для просмотра и поиска товаров.\"\"\"\n    serializer_class = ProductSerializer\n    filterset_fields = [\"category\", \"price\"]\n    search_fields = [\"name\", \"description\"]\n    def get_queryset(self) -> QuerySet[Product]:\n        return Product.objects.filter(is_active=True).select_related(\"category\")",
         "detail": "products.views",
         "documentation": {}
     },
@@ -1616,6 +2683,762 @@
         "description": "manage",
         "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
         "detail": "manage",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Caramel Malt 60L\"\nslug = slugify(name)\ndescription = (\n    \"Caramel Malt 60L (also known as Crystal 60L) is a versatile specialty malt \"\n    \"that is a secret weapon for many brewers to enhance beer color, flavor, and body. \"\n    \"It imparts a beautiful copper-amber hue to the brew.\\n\\n\"\n    \"The flavor of this malt is characterized by distinct notes of caramel, toffee, \"\n    \"and light hints of toasted bread. It adds a pleasant sweetness to the beer that \"\n    \"beautifully balances hop bitterness and also contributes to improved head retention.\\n\\n\"\n    \"Caramel Malt 60L is ideal for a wide range of styles, from Pale Ales and Amber Ales \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Caramel Malt 60L (also known as Crystal 60L) is a versatile specialty malt \"\n    \"that is a secret weapon for many brewers to enhance beer color, flavor, and body. \"\n    \"It imparts a beautiful copper-amber hue to the brew.\\n\\n\"\n    \"The flavor of this malt is characterized by distinct notes of caramel, toffee, \"\n    \"and light hints of toasted bread. It adds a pleasant sweetness to the beer that \"\n    \"beautifully balances hop bitterness and also contributes to improved head retention.\\n\\n\"\n    \"Caramel Malt 60L is ideal for a wide range of styles, from Pale Ales and Amber Ales \"\n    \"to Porters and Stouts, adding complexity and depth.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Caramel Malt 60L (also known as Crystal 60L) is a versatile specialty malt \"\n    \"that is a secret weapon for many brewers to enhance beer color, flavor, and body. \"\n    \"It imparts a beautiful copper-amber hue to the brew.\\n\\n\"\n    \"The flavor of this malt is characterized by distinct notes of caramel, toffee, \"\n    \"and light hints of toasted bread. It adds a pleasant sweetness to the beer that \"\n    \"beautifully balances hop bitterness and also contributes to improved head retention.\\n\\n\"\n    \"Caramel Malt 60L is ideal for a wide range of styles, from Pale Ales and Amber Ales \"\n    \"to Porters and Stouts, adding complexity and depth.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 3.00\nstock = 100\nis_active = True\npicture_url = \"img/products/caramel_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/caramel_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/caramel_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/caramel_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Cascade Hops\"\nslug = slugify(name)\ndescription = (\n    \"Cascade is arguably the most famous hop in the American craft brewing revolution. \"\n    \"Developed in Oregon, it has a unique floral and citrus character that defined the taste \"\n    \"of the classic American Pale Ale.\\n\\n\"\n    \"Its moderate bitterness and vibrant aroma, with notes of grapefruit, orange, and light \"\n    \"floral undertones, make it incredibly versatile. Cascade is excellent for both bittering \"\n    \"and late kettle additions or for dry hopping.\\n\\n\"\n    \"This hop is a reliable choice for brewers looking to create a refreshing, balanced, and \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Cascade is arguably the most famous hop in the American craft brewing revolution. \"\n    \"Developed in Oregon, it has a unique floral and citrus character that defined the taste \"\n    \"of the classic American Pale Ale.\\n\\n\"\n    \"Its moderate bitterness and vibrant aroma, with notes of grapefruit, orange, and light \"\n    \"floral undertones, make it incredibly versatile. Cascade is excellent for both bittering \"\n    \"and late kettle additions or for dry hopping.\\n\\n\"\n    \"This hop is a reliable choice for brewers looking to create a refreshing, balanced, and \"\n    \"recognizable ale.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Cascade is arguably the most famous hop in the American craft brewing revolution. \"\n    \"Developed in Oregon, it has a unique floral and citrus character that defined the taste \"\n    \"of the classic American Pale Ale.\\n\\n\"\n    \"Its moderate bitterness and vibrant aroma, with notes of grapefruit, orange, and light \"\n    \"floral undertones, make it incredibly versatile. Cascade is excellent for both bittering \"\n    \"and late kettle additions or for dry hopping.\\n\\n\"\n    \"This hop is a reliable choice for brewers looking to create a refreshing, balanced, and \"\n    \"recognizable ale.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 7.49\nstock = 100\nis_active = True\npicture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/cascade_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Centennial Hops\"\nslug = slugify(name)\ndescription = (\n    'Centennial is a classic American hop often referred to as \"Super Cascade\" due to its '\n    \"similar citrus profile but with a higher intensity and alpha acid content. It is one of \"\n    'the \"Three Cs\" (along with Cascade and Columbus) that defined the flavor of American IPAs.\\n\\n'\n    \"The aroma of Centennial is powerful, with bright notes of lemon, grapefruit, and pronounced \"\n    'floral undertones. Unlike Cascade, it is less spicy and more \"clean\" in its citrus expression. '\n    \"Thanks to its high alpha acid content, it is excellent for both bittering and creating an \"\n    \"intense aroma.\\n\\n\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    'Centennial is a classic American hop often referred to as \"Super Cascade\" due to its '\n    \"similar citrus profile but with a higher intensity and alpha acid content. It is one of \"\n    'the \"Three Cs\" (along with Cascade and Columbus) that defined the flavor of American IPAs.\\n\\n'\n    \"The aroma of Centennial is powerful, with bright notes of lemon, grapefruit, and pronounced \"\n    'floral undertones. Unlike Cascade, it is less spicy and more \"clean\" in its citrus expression. '\n    \"Thanks to its high alpha acid content, it is excellent for both bittering and creating an \"\n    \"intense aroma.\\n\\n\"\n    \"This is an extremely versatile hop, perfect for American Pale Ales, IPAs, and Double IPAs, \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    'Centennial is a classic American hop often referred to as \"Super Cascade\" due to its '\n    \"similar citrus profile but with a higher intensity and alpha acid content. It is one of \"\n    'the \"Three Cs\" (along with Cascade and Columbus) that defined the flavor of American IPAs.\\n\\n'\n    \"The aroma of Centennial is powerful, with bright notes of lemon, grapefruit, and pronounced \"\n    'floral undertones. Unlike Cascade, it is less spicy and more \"clean\" in its citrus expression. '\n    \"Thanks to its high alpha acid content, it is excellent for both bittering and creating an \"\n    \"intense aroma.\\n\\n\"\n    \"This is an extremely versatile hop, perfect for American Pale Ales, IPAs, and Double IPAs, \"\n    \"giving them a bright and recognizable character.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 6.20\nstock = 100\nis_active = True\npicture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/centennial_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Citra Hops\"\nslug = slugify(name)\ndescription = (\n    \"Citra is one of the most sought-after and recognizable hop varieties in the world of craft brewing, \"\n    \"famous for its bright and multifaceted citrus aroma. Developed in the USA, this variety is ideal for \"\n    \"IPAs, Pale Ales, and other styles where a distinct fruity profile is desired.\\n\\n\"\n    \"Citra boasts a high alpha acid content, making it excellent for both bitterness and intense aroma. \"\n    \"It imparts notes of grapefruit, lime, passion fruit, lychee, and melon to beer, creating a unique \"\n    \"tropical bouquet.\\n\\n\"\n    \"Our T-90 pellets are hermetically sealed to preserve freshness and maximum aromatics.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Citra is one of the most sought-after and recognizable hop varieties in the world of craft brewing, \"\n    \"famous for its bright and multifaceted citrus aroma. Developed in the USA, this variety is ideal for \"\n    \"IPAs, Pale Ales, and other styles where a distinct fruity profile is desired.\\n\\n\"\n    \"Citra boasts a high alpha acid content, making it excellent for both bitterness and intense aroma. \"\n    \"It imparts notes of grapefruit, lime, passion fruit, lychee, and melon to beer, creating a unique \"\n    \"tropical bouquet.\\n\\n\"\n    \"Our T-90 pellets are hermetically sealed to preserve freshness and maximum aromatics.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Citra is one of the most sought-after and recognizable hop varieties in the world of craft brewing, \"\n    \"famous for its bright and multifaceted citrus aroma. Developed in the USA, this variety is ideal for \"\n    \"IPAs, Pale Ales, and other styles where a distinct fruity profile is desired.\\n\\n\"\n    \"Citra boasts a high alpha acid content, making it excellent for both bitterness and intense aroma. \"\n    \"It imparts notes of grapefruit, lime, passion fruit, lychee, and melon to beer, creating a unique \"\n    \"tropical bouquet.\\n\\n\"\n    \"Our T-90 pellets are hermetically sealed to preserve freshness and maximum aromatics.\"\n)\nprice = 5.99",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 5.99\nstock = 100\nis_active = True\npicture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/citra_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Imperial Organic Yeast A07\"\nslug = slugify(name)\ndescription = (\n    'Imperial Organic Yeast A07 \"Flagship\" is a versatile and extremely popular liquid yeast, '\n    \"known for its ability to create balanced ales with a light fruity character. This strain is \"\n    \"a true workhorse and is perfect for most American beer styles.\\n\\n\"\n    '\"Flagship\" provides a clean fermentation with light ester notes of citrus and stone fruit '\n    \"that complement, rather than overpower, the hop and malt profile. It has good attenuation and \"\n    \"moderate flocculation, leaving behind a soft and smooth mouthfeel.\\n\\n\"\n    \"Thanks to the high cell count per package (200 billion), this yeast does not require a starter \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    'Imperial Organic Yeast A07 \"Flagship\" is a versatile and extremely popular liquid yeast, '\n    \"known for its ability to create balanced ales with a light fruity character. This strain is \"\n    \"a true workhorse and is perfect for most American beer styles.\\n\\n\"\n    '\"Flagship\" provides a clean fermentation with light ester notes of citrus and stone fruit '\n    \"that complement, rather than overpower, the hop and malt profile. It has good attenuation and \"\n    \"moderate flocculation, leaving behind a soft and smooth mouthfeel.\\n\\n\"\n    \"Thanks to the high cell count per package (200 billion), this yeast does not require a starter \"\n    \"for most standard batches of beer, making it a convenient and reliable choice.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    'Imperial Organic Yeast A07 \"Flagship\" is a versatile and extremely popular liquid yeast, '\n    \"known for its ability to create balanced ales with a light fruity character. This strain is \"\n    \"a true workhorse and is perfect for most American beer styles.\\n\\n\"\n    '\"Flagship\" provides a clean fermentation with light ester notes of citrus and stone fruit '\n    \"that complement, rather than overpower, the hop and malt profile. It has good attenuation and \"\n    \"moderate flocculation, leaving behind a soft and smooth mouthfeel.\\n\\n\"\n    \"Thanks to the high cell count per package (200 billion), this yeast does not require a starter \"\n    \"for most standard batches of beer, making it a convenient and reliable choice.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 8.99\nstock = 100\nis_active = True\npicture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/imperial_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Maris Otter Pale Malt\"\nslug = slugify(name)\ndescription = (\n    \"Maris Otter Pale Malt is the cornerstone of British brewing heritage, a revered base malt \"\n    \"prized by brewers worldwide for its exceptional quality and flavor.\\n\\n\"\n    \"It provides a rich, slightly sweet, and biscuity malt backbone that is more complex than \"\n    \"standard 2-row malts, with subtle nutty undertones that enhance any beer style. Perfect for \"\n    \"creating authentic British ales such as Bitters, IPAs, Porters, and Stouts.\\n\\n\"\n    \"Its excellent processing characteristics and high extract yield make it a reliable and \"\n    \"efficient choice for both novice and experienced brewers.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Maris Otter Pale Malt is the cornerstone of British brewing heritage, a revered base malt \"\n    \"prized by brewers worldwide for its exceptional quality and flavor.\\n\\n\"\n    \"It provides a rich, slightly sweet, and biscuity malt backbone that is more complex than \"\n    \"standard 2-row malts, with subtle nutty undertones that enhance any beer style. Perfect for \"\n    \"creating authentic British ales such as Bitters, IPAs, Porters, and Stouts.\\n\\n\"\n    \"Its excellent processing characteristics and high extract yield make it a reliable and \"\n    \"efficient choice for both novice and experienced brewers.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Maris Otter Pale Malt is the cornerstone of British brewing heritage, a revered base malt \"\n    \"prized by brewers worldwide for its exceptional quality and flavor.\\n\\n\"\n    \"It provides a rich, slightly sweet, and biscuity malt backbone that is more complex than \"\n    \"standard 2-row malts, with subtle nutty undertones that enhance any beer style. Perfect for \"\n    \"creating authentic British ales such as Bitters, IPAs, Porters, and Stouts.\\n\\n\"\n    \"Its excellent processing characteristics and high extract yield make it a reliable and \"\n    \"efficient choice for both novice and experienced brewers.\"\n)\nprice = 2.50",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 2.50\nstock = 100\nis_active = True\npicture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/maris_otter_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Mosaic Hops\"\nslug = slugify(name)\ndescription = (\n    \"Mosaic is one of the most vibrant and multifaceted hops on the modern craft scene. \"\n    'As a \"daughter\" of Simcoe, it inherited the best from its lineage and added a unique '\n    \"palette of aromas, making it a true aromatic bomb.\\n\\n\"\n    'The name \"Mosaic\" is fully justified: it creates a complex mosaic of flavors and aromas, '\n    \"including notes of tropical fruits (mango, guava), citrus (tangerine), berries (blueberry), \"\n    \"stone fruits (peach), and even light pine and earthy undertones.\\n\\n\"\n    \"This hop is ideal for dry hopping in IPA and Pale Ale styles, where it can unleash its full \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Mosaic is one of the most vibrant and multifaceted hops on the modern craft scene. \"\n    'As a \"daughter\" of Simcoe, it inherited the best from its lineage and added a unique '\n    \"palette of aromas, making it a true aromatic bomb.\\n\\n\"\n    'The name \"Mosaic\" is fully justified: it creates a complex mosaic of flavors and aromas, '\n    \"including notes of tropical fruits (mango, guava), citrus (tangerine), berries (blueberry), \"\n    \"stone fruits (peach), and even light pine and earthy undertones.\\n\\n\"\n    \"This hop is ideal for dry hopping in IPA and Pale Ale styles, where it can unleash its full \"\n    \"potential, creating a juicy, vibrant, and unforgettable beer.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Mosaic is one of the most vibrant and multifaceted hops on the modern craft scene. \"\n    'As a \"daughter\" of Simcoe, it inherited the best from its lineage and added a unique '\n    \"palette of aromas, making it a true aromatic bomb.\\n\\n\"\n    'The name \"Mosaic\" is fully justified: it creates a complex mosaic of flavors and aromas, '\n    \"including notes of tropical fruits (mango, guava), citrus (tangerine), berries (blueberry), \"\n    \"stone fruits (peach), and even light pine and earthy undertones.\\n\\n\"\n    \"This hop is ideal for dry hopping in IPA and Pale Ale styles, where it can unleash its full \"\n    \"potential, creating a juicy, vibrant, and unforgettable beer.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 9.50\nstock = 100\nis_active = True\npicture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/mosaic_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Pilsner Malt\"\nslug = slugify(name)\ndescription = (\n    \"Pilsner Malt is the lightest base malt, forming the foundation for classic German and Czech \"\n    \"pilsners, as well as a multitude of other light lagers and ales. It is produced from high-quality \"\n    \"two-row barley and undergoes gentle kilning at low temperatures.\\n\\n\"\n    \"This malt imparts a very light, straw-like color and a clean, slightly sweet, grainy flavor to the \"\n    \"beer. Its neutral character allows the aroma of hops and the work of the yeast to fully express \"\n    \"themselves, making it an ideal base for beers where purity and crispness are paramount.\\n\\n\"\n    \"Thanks to its high enzymatic activity, Pilsner Malt is excellent for mashes with a large proportion \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Pilsner Malt is the lightest base malt, forming the foundation for classic German and Czech \"\n    \"pilsners, as well as a multitude of other light lagers and ales. It is produced from high-quality \"\n    \"two-row barley and undergoes gentle kilning at low temperatures.\\n\\n\"\n    \"This malt imparts a very light, straw-like color and a clean, slightly sweet, grainy flavor to the \"\n    \"beer. Its neutral character allows the aroma of hops and the work of the yeast to fully express \"\n    \"themselves, making it an ideal base for beers where purity and crispness are paramount.\\n\\n\"\n    \"Thanks to its high enzymatic activity, Pilsner Malt is excellent for mashes with a large proportion \"\n    \"of unmalted grains.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Pilsner Malt is the lightest base malt, forming the foundation for classic German and Czech \"\n    \"pilsners, as well as a multitude of other light lagers and ales. It is produced from high-quality \"\n    \"two-row barley and undergoes gentle kilning at low temperatures.\\n\\n\"\n    \"This malt imparts a very light, straw-like color and a clean, slightly sweet, grainy flavor to the \"\n    \"beer. Its neutral character allows the aroma of hops and the work of the yeast to fully express \"\n    \"themselves, making it an ideal base for beers where purity and crispness are paramount.\\n\\n\"\n    \"Thanks to its high enzymatic activity, Pilsner Malt is excellent for mashes with a large proportion \"\n    \"of unmalted grains.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 2.20\nstock = 100\nis_active = True\npicture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/pilsner_malt.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Saaz Hops\"\nslug = slugify(name)\ndescription = (\n    \"Saaz is a noble hop, the heart and soul of classic Bohemian and Czech pilsners. \"\n    \"Grown in the Zatec region of the Czech Republic, it possesses a delicate and refined \"\n    \"aromatic profile that is unmistakable.\\n\\n\"\n    \"Its aroma is characterized by soft, spicy, herbal, and floral notes. Saaz is primarily \"\n    \"used for aroma rather than bitterness, as its alpha acid content is low. It imparts a \"\n    \"classic European elegance and clean taste to the beer.\\n\\n\"\n    \"If you aim to brew an authentic Czech pilsner, European lager, or Belgian ale, Saaz is \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Saaz is a noble hop, the heart and soul of classic Bohemian and Czech pilsners. \"\n    \"Grown in the Zatec region of the Czech Republic, it possesses a delicate and refined \"\n    \"aromatic profile that is unmistakable.\\n\\n\"\n    \"Its aroma is characterized by soft, spicy, herbal, and floral notes. Saaz is primarily \"\n    \"used for aroma rather than bitterness, as its alpha acid content is low. It imparts a \"\n    \"classic European elegance and clean taste to the beer.\\n\\n\"\n    \"If you aim to brew an authentic Czech pilsner, European lager, or Belgian ale, Saaz is \"\n    \"an indispensable ingredient.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Saaz is a noble hop, the heart and soul of classic Bohemian and Czech pilsners. \"\n    \"Grown in the Zatec region of the Czech Republic, it possesses a delicate and refined \"\n    \"aromatic profile that is unmistakable.\\n\\n\"\n    \"Its aroma is characterized by soft, spicy, herbal, and floral notes. Saaz is primarily \"\n    \"used for aroma rather than bitterness, as its alpha acid content is low. It imparts a \"\n    \"classic European elegance and clean taste to the beer.\\n\\n\"\n    \"If you aim to brew an authentic Czech pilsner, European lager, or Belgian ale, Saaz is \"\n    \"an indispensable ingredient.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 4.75\nstock = 100\nis_active = True\npicture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/saaz_hops.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"SafAle US-05 Dry Ale Yeast\"\nslug = slugify(name)\ndescription = (\n    \"SafAle US-05 is the most famous and popular American ale yeast in the world. \"\n    \"This strain is renowned for its ability to produce clean, crisp beers with a neutral \"\n    \"flavor profile, allowing the hop and malt character to shine through.\\n\\n\"\n    \"With its high attenuation and high flocculation, US-05 is ideal for a wide range of \"\n    \"American ale styles, from West Coast IPAs to American Pale Ales and Cream Ales. It forms \"\n    \"a firm sediment, making racking and clarification easier.\\n\\n\"\n    \"Reliable, easy to use, and available in a dry format, this yeast is the number one choice \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"SafAle US-05 is the most famous and popular American ale yeast in the world. \"\n    \"This strain is renowned for its ability to produce clean, crisp beers with a neutral \"\n    \"flavor profile, allowing the hop and malt character to shine through.\\n\\n\"\n    \"With its high attenuation and high flocculation, US-05 is ideal for a wide range of \"\n    \"American ale styles, from West Coast IPAs to American Pale Ales and Cream Ales. It forms \"\n    \"a firm sediment, making racking and clarification easier.\\n\\n\"\n    \"Reliable, easy to use, and available in a dry format, this yeast is the number one choice \"\n    \"for brewers seeking consistent and predictable results.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"SafAle US-05 is the most famous and popular American ale yeast in the world. \"\n    \"This strain is renowned for its ability to produce clean, crisp beers with a neutral \"\n    \"flavor profile, allowing the hop and malt character to shine through.\\n\\n\"\n    \"With its high attenuation and high flocculation, US-05 is ideal for a wide range of \"\n    \"American ale styles, from West Coast IPAs to American Pale Ales and Cream Ales. It forms \"\n    \"a firm sediment, making racking and clarification easier.\\n\\n\"\n    \"Reliable, easy to use, and available in a dry format, this yeast is the number one choice \"\n    \"for brewers seeking consistent and predictable results.\"\n)",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 3.25\nstock = 100\nis_active = True\npicture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/safale_us05_yeast.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"Unmalted Wheat\"\nslug = slugify(name)\ndescription = (\n    \"Unmalted wheat is the secret ingredient behind the classic hazy, refreshing character \"\n    \"of Belgian Witbier. Unlike malted wheat, this is raw, unprocessed grain that imparts a \"\n    \"unique texture and flavor to the beer.\\n\\n\"\n    \"Using unmalted wheat provides the beer with its characteristic light haze, a smooth, \"\n    \"silky body, and a subtle, bready-grainy flavor that doesn't overpower the delicate notes \"\n    \"of coriander and orange peel. The high protein content of this grain also contributes to \"\n    \"a dense and persistent head.\\n\\n\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    \"Unmalted wheat is the secret ingredient behind the classic hazy, refreshing character \"\n    \"of Belgian Witbier. Unlike malted wheat, this is raw, unprocessed grain that imparts a \"\n    \"unique texture and flavor to the beer.\\n\\n\"\n    \"Using unmalted wheat provides the beer with its characteristic light haze, a smooth, \"\n    \"silky body, and a subtle, bready-grainy flavor that doesn't overpower the delicate notes \"\n    \"of coriander and orange peel. The high protein content of this grain also contributes to \"\n    \"a dense and persistent head.\\n\\n\"\n    \"This ingredient is a must-have for any brewer aiming to recreate an authentic Belgian \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    \"Unmalted wheat is the secret ingredient behind the classic hazy, refreshing character \"\n    \"of Belgian Witbier. Unlike malted wheat, this is raw, unprocessed grain that imparts a \"\n    \"unique texture and flavor to the beer.\\n\\n\"\n    \"Using unmalted wheat provides the beer with its characteristic light haze, a smooth, \"\n    \"silky body, and a subtle, bready-grainy flavor that doesn't overpower the delicate notes \"\n    \"of coriander and orange peel. The high protein content of this grain also contributes to \"\n    \"a dense and persistent head.\\n\\n\"\n    \"This ingredient is a must-have for any brewer aiming to recreate an authentic Belgian \"\n    \"Witbier or to add complexity and body to other styles, such as Lambics.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 1.80\nstock = 100\nis_active = True\npicture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 100\nis_active = True\npicture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/unmalted_wheat.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "name",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "name = \"West Coast IPA - All-Grain Kit\"\nslug = slugify(name)\ndescription = (\n    'Brew a craft brewing classic with our \"West Coast IPA - All-Grain Kit\"! This kit contains '\n    \"all the necessary ingredients to create a bright, bitter, and incredibly aromatic IPA in \"\n    \"the style of the US West Coast.\\n\\n\"\n    \"We've selected the perfect combination of malts to achieve a clean, dry body that serves as \"\n    \"an excellent base for a hop explosion. The kit includes a powerful combination of Centennial, \"\n    \"Simcoe, and Columbus hops, which provide a burst of citrus, pine, and resinous notes \"\n    \"characteristic of this style.\\n\\n\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "slug",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "slug = slugify(name)\ndescription = (\n    'Brew a craft brewing classic with our \"West Coast IPA - All-Grain Kit\"! This kit contains '\n    \"all the necessary ingredients to create a bright, bitter, and incredibly aromatic IPA in \"\n    \"the style of the US West Coast.\\n\\n\"\n    \"We've selected the perfect combination of malts to achieve a clean, dry body that serves as \"\n    \"an excellent base for a hop explosion. The kit includes a powerful combination of Centennial, \"\n    \"Simcoe, and Columbus hops, which provide a burst of citrus, pine, and resinous notes \"\n    \"characteristic of this style.\\n\\n\"\n    \"This kit is your ticket to the world of true West Coast IPA. It comes with detailed step-by-step \"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "description",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "description = (\n    'Brew a craft brewing classic with our \"West Coast IPA - All-Grain Kit\"! This kit contains '\n    \"all the necessary ingredients to create a bright, bitter, and incredibly aromatic IPA in \"\n    \"the style of the US West Coast.\\n\\n\"\n    \"We've selected the perfect combination of malts to achieve a clean, dry body that serves as \"\n    \"an excellent base for a hop explosion. The kit includes a powerful combination of Centennial, \"\n    \"Simcoe, and Columbus hops, which provide a burst of citrus, pine, and resinous notes \"\n    \"characteristic of this style.\\n\\n\"\n    \"This kit is your ticket to the world of true West Coast IPA. It comes with detailed step-by-step \"\n    \"instructions to guide you through every stage, from mashing to bottling.\"",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "price",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "price = 60.00\nstock = 50\nis_active = True\npicture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "stock",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "stock = 50\nis_active = True\npicture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "is_active",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "is_active = True\npicture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "picture_url",
+        "kind": 5,
+        "importPath": "seed",
+        "description": "seed",
+        "peekOfCode": "picture_url = \"img/products/ipa_kit.jpg\"\n# ======================\n# SAVE PRODUCT\n# ======================\nproduct, created = Product.objects.get_or_create(\n    slug=slug,\n    defaults={\n        \"name\": name,\n        \"category\": category,\n        \"description\": description,",
+        "detail": "seed",
         "documentation": {}
     }
 ]
