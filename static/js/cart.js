@@ -1,11 +1,13 @@
-// Функция для получения CSRF-токена
+// =====================================
+// CSRF
+// =====================================
 function getCookie(name) {
   let cookieValue = null;
   if (document.cookie && document.cookie !== "") {
     const cookies = document.cookie.split(";");
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      if (cookie.substring(0, name.length + 1) === name + "=") {
+    for (let cookie of cookies) {
+      cookie = cookie.trim();
+      if (cookie.startsWith(name + "=")) {
         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
         break;
       }
@@ -14,36 +16,144 @@ function getCookie(name) {
   return cookieValue;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Cart JS Loaded"); // Проверка в консоли (F12)
+// =====================================
+// GLOBAL CART STATE
+// =====================================
+const CartState = {
+  items: {}, // { productId: quantity }
+};
 
+// =====================================
+// UI HELPERS
+// =====================================
+function updateHeaderBadge(count) {
+  const badge = document.getElementById("cart-badge");
+  if (!badge) return;
+
+  badge.textContent = count;
+  badge.classList.toggle("is-hidden", count === 0);
+}
+
+function updateProductCard(productId, quantity) {
+  const wrapper = document.querySelector(
+    `.cart-controls[data-product-id="${productId}"]`
+  );
+  if (!wrapper) return;
+
+  const addBtn = wrapper.querySelector(".add-to-cart-button");
+  const counter = wrapper.querySelector(".quantity-counter");
+  const value = wrapper.querySelector(".quantity-value");
+
+  if (quantity > 0) {
+    addBtn.classList.add("is-hidden");
+    counter.classList.remove("is-hidden");
+    value.textContent = `${quantity} in cart`;
+    value.dataset.qty = String(quantity);
+  } else {
+    addBtn.classList.remove("is-hidden");
+    counter.classList.add("is-hidden");
+    value.dataset.qty = "0";
+  }
+}
+
+function syncFromResponse(data) {
+  CartState.items[data.product_id] = data.quantity;
+  updateHeaderBadge(data.cart_items_count);
+  updateProductCard(data.product_id, data.quantity);
+}
+
+// =====================================
+// MAIN
+// =====================================
+document.addEventListener("DOMContentLoaded", function () {
   const csrftoken = getCookie("csrftoken");
 
-  // 1. Кнопка "Добавить в корзину" (Страница товара)
-  const addBtn = document.querySelector(".btn-add-to-cart");
-  if (addBtn) {
-    addBtn.addEventListener("click", function () {
-      const productId = this.dataset.productId;
-      const quantity = document.getElementById("product-quantity").value;
+  // =====================================
+  // 1. ADD TO CART
+  // =====================================
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".add-to-cart-button");
+    if (!btn || btn.dataset.loading === "true") return;
 
-      fetch(`/cart/add/${productId}/`, {
-        method: "POST",
-        headers: {
-          "X-CSRFToken": csrftoken,
-          "X-Requested-With": "XMLHttpRequest",
-        },
-        body: new URLSearchParams({ quantity: quantity }),
+    const wrapper = btn.closest(".cart-controls");
+    if (!wrapper) return;
+
+    const productId = btn.dataset.productId;
+    btn.dataset.loading = "true";
+
+    fetch(`/cart/add/${productId}/`, {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": csrftoken,
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: new URLSearchParams({ quantity: 1 }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === "success") {
+          syncFromResponse(data);
+        }
       })
-        .then((res) => res.json())
-        .then((data) => {
-          alert(data.message);
-          location.reload(); // Обновляем, чтобы увидеть счетчик в хедере
-        });
-    });
-  }
+      .finally(() => {
+        btn.dataset.loading = "false";
+      });
+  });
 
-  // 2. Управление в самой корзине (страница /cart/)
+  // =====================================
+  // 2. + / − НА КАРТОЧКЕ ТОВАРА
+  // =====================================
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".quantity-btn");
+    if (!btn || btn.dataset.loading === "true") return;
+
+    const wrapper = btn.closest(".cart-controls");
+    if (!wrapper) return;
+
+    const productId = wrapper.dataset.productId;
+    const valueEl = wrapper.querySelector(".quantity-value");
+
+    let currentQty = parseInt(valueEl.dataset.qty, 10);
+    if (isNaN(currentQty)) return;
+
+    let newQty =
+      btn.dataset.action === "increase"
+        ? currentQty + 1
+        : currentQty - 1;
+
+    if (newQty < 1) return;
+
+    btn.dataset.loading = "true";
+
+    fetch(`/cart/update/${productId}/`, {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": csrftoken,
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: new URLSearchParams({ quantity: newQty }),
+    })
+      .then((res) => res.json())
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === "success") {
+          syncFromResponse(data);
+          valueEl.dataset.qty = data.quantity;
+          valueEl.textContent = `${data.quantity} in cart`
+        } else {
+          return;
+        }
+      })
+      .finally(() => {
+        btn.dataset.loading = "false";
+      });
+  });
+
+  // =====================================
+  // 3. CART PAGE (/cart/)
+  // =====================================
   const cartList = document.getElementById("cart-items-list");
+
   if (cartList) {
     cartList.addEventListener("click", function (e) {
       const btn = e.target.closest("button");
@@ -53,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const action = btn.dataset.action;
       const itemRow = btn.closest(".cart-item");
 
-      // Удаление
+      // REMOVE
       if (action === "remove") {
         fetch(`/cart/remove/${productId}/`, {
           method: "POST",
@@ -64,42 +174,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(() => location.reload());
       }
 
-      // Изменение количества (+ / -)
+      // + / -
       if (action === "increase" || action === "decrease") {
         const qtySpan = itemRow.querySelector(".quantity-value-cart");
-        let currentQty = parseInt(qtySpan.textContent);
-        let newQty = action === "increase" ? currentQty + 1 : currentQty - 1;
+        let currentQty = parseInt(qtySpan.textContent, 10);
+        let newQty =
+          action === "increase" ? currentQty + 1 : currentQty - 1;
 
-        if (newQty > 0) {
-          fetch(`/cart/update/${productId}/`, {
-            method: "POST",
-            headers: {
-              "X-CSRFToken": csrftoken,
-              "X-Requested-With": "XMLHttpRequest",
-            },
-            body: new URLSearchParams({ quantity: newQty }),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.status === "success") {
-                // 1. Показываем уведомление
-                alert(data.message);
+        if (newQty < 1) return;
 
-                // 2. Находим счетчик в шапке
-                let badge = document.getElementById("cart-badge");
-
-                if (badge) {
-                  // Если счетчик уже есть, просто меняем цифру
-                  badge.textContent = data.cart_items_count;
-                } else {
-                  // Если товара не было и счетчика нет — просто обновим страницу один раз
-                  location.reload();
-                }
-              }
-            });
-        } else {
-          alert("Количество не может быть меньше 1!");
-        }
+        fetch(`/cart/update/${productId}/`, {
+          method: "POST",
+          headers: {
+            "X-CSRFToken": csrftoken,
+            "X-Requested-With": "XMLHttpRequest",
+          },
+          body: new URLSearchParams({ quantity: newQty }),
+        }).then(() => location.reload());
       }
     });
   }

@@ -1,39 +1,43 @@
-from typing import TYPE_CHECKING
-
 from django.conf import settings
 from django.db import models
 
 from products.models import Product
 
-if TYPE_CHECKING:
-    from datetime import datetime
+STATUS_CHOICES = [
+    ('pending', 'Pending'),
+    ('paid', 'Paid'),
+    ('shipped', 'Shipped'),
+    ('delivered', 'Delivered'),
+    ('cancelled', 'Cancelled'),
+]
 
-    from users.models import User
+User = settings.AUTH_USER_MODEL
 
 
 class Order(models.Model):
-    user: "User" = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="orders"
-    )  # type: ignore[assignment]
-    full_name: str = models.CharField(max_length=100, default="")  # type: ignore[assignment]
-    phone: str = models.CharField(max_length=20, default="")  # type: ignore[assignment]
-    city: str = models.CharField(max_length=100, default="")  # type: ignore[assignment]
-    address: str = models.TextField(default="")  # type: ignore[assignment]
-    created: "datetime" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]
-    is_paid: bool = models.BooleanField(default=False)  # type: ignore[assignment]
-    total_price: float = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # type: ignore[assignment]
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    full_name = models.CharField(max_length=100, default="")
+    phone = models.CharField(max_length=20, default="")
+    city = models.CharField(max_length=100, default="")
+    address = models.TextField(default="")
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_paid = models.BooleanField(default=False)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"Order #{self.id} by {self.user}"
+
+    class Meta:
+        verbose_name = "Заказ"
+        verbose_name_plural = "Заказы"
 
 
 class OrderItem(models.Model):
-    order: Order = models.ForeignKey(
-        Order, on_delete=models.CASCADE, related_name="items"
-    )  # type: ignore[assignment]
-    product: Product = models.ForeignKey(Product, on_delete=models.CASCADE)  # type: ignore[assignment]
-    quantity: int = models.PositiveIntegerField(default=1)  # type: ignore[assignment]
-    price: float = models.DecimalField(max_digits=10, decimal_places=2)  # type: ignore[assignment]
+    order = models.ForeignKey(Order, related_name="items", on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.product.name} x {self.quantity}"

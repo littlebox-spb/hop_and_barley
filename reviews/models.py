@@ -1,24 +1,17 @@
-from typing import TYPE_CHECKING
-
 from django.conf import settings
 from django.db import models
 
 from products.models import Product
 
-if TYPE_CHECKING:
-    from datetime import datetime
-
-from users.models import User
+User = settings.AUTH_USER_MODEL
 
 
 class Review(models.Model):
-    product: Product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="reviews"
-    )  # type: ignore[assignment]
-    user: User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # type: ignore[assignment]
-    rating: int = models.PositiveIntegerField()  # type: ignore[assignment]
-    text: str = models.TextField()  # type: ignore[assignment]
-    created_at: "datetime" = models.DateTimeField(auto_now_add=True)  # type: ignore[assignment]
+    product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.PositiveSmallIntegerField()
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"Review {self.rating}/5"

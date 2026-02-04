@@ -1,7 +1,7 @@
 from django.db.models import Q, QuerySet
 from django.views.generic import DetailView, ListView, TemplateView
 from rest_framework import viewsets
-
+from orders.cart import Cart
 from .models import Category, Product
 from .serializers import ProductSerializer
 
@@ -48,10 +48,20 @@ class ProductListView(ListView):
         return context
 
 
+from orders.cart import Cart
+
 class ProductDetailView(DetailView):
     model = Product
     template_name = "product_detail.html"
     context_object_name = "product"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        cart = Cart(self.request)
+        product_id = str(self.object.id)
+
+        context["cart_quantity"] = cart.cart.get(product_id, {}).get("quantity", 0)
+        return context
 
 
 class GuidesRecipesView(TemplateView):

@@ -3,6 +3,7 @@ from typing import Any, Self, TYPE_CHECKING
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
+from django.views.decorators.http import require_POST
 
 from orders.models import Order
 
@@ -31,3 +32,8 @@ class ProfileView(LoginRequiredMixin, TemplateView):
             "-created_at"
         )
         return context
+
+@require_POST
+def logout_view(request):
+    logout(request)
+    return redirect('home')

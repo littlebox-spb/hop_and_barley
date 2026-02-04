@@ -32,35 +32,32 @@
                     </div>
                     <!-- Add cart section from your initial query -->
                     <div class="product-cart-section">
-                        <div class="cart-controls">
-                            <!-- Add to Cart button -->
-                            <button class="button button--primary add-to-cart-button"
-                                    id="add-to-cart-btn"
-                                    data-product-id="{{ product.id }}"
-                                    {% if product.stock == 0 %}disabled{% endif %}>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                <span>
-                                    {% if product.stock > 0 %}
-                                        Add to Cart
-                                    {% else %}
-                                        Out of Stock
-                                    {% endif %}
-                                </span>
-                            </button>
-                            <!-- Quantity counter -->
-                            <div class="quantity-counter is-hidden" id="quantity-counter">
-                                <button class="quantity-btn"
-                                        data-action="decrease"
-                                        aria-label="Decrease quantity">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <span class="quantity-value">1 in cart</span>
-                                <button class="quantity-btn"
-                                        data-action="increase"
-                                        aria-label="Increase quantity">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
+                        <div class="cart-controls" data-product-id="{{ product.id }}">
+                            {% if cart_quantity > 0 %}
+                                <button class="button button--primary add-to-cart-button is-hidden"
+                                        data-product-id="{{ product.id }}">Add to Cart</button>
+                                <div class="quantity-counter">
+                                    <button class="quantity-btn" data-action="decrease">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <span class="quantity-value" data-qty="{{ cart_quantity }}">{{ cart_quantity }} in cart</span>
+                                    <button class="quantity-btn" data-action="increase">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            {% else %}
+                                <button class="button button--primary add-to-cart-button {% if cart_quantity > 0 %}is-hidden{% endif %}"
+                                        data-product-id="{{ product.id }}">Add to Cart</button>
+                                <div class="quantity-counter {% if cart_quantity == 0 %}is-hidden{% endif %}">
+                                    <button class="quantity-btn" data-action="decrease">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <span class="quantity-value" data-qty="{{ cart_quantity }}">{{ cart_quantity }} in cart</span>
+                                    <button class="quantity-btn" data-action="increase">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

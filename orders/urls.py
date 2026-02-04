@@ -2,13 +2,13 @@
 URL маршруты для корзины покупок.
 """
 
-from django.urls import URLPattern, path
+from django.urls import path
 
 from . import views
 
-app_name = "orders"
+# app_name = 'orders'
 
-urlpatterns: list[URLPattern] = [
+urlpatterns = [
     # Просмотр корзины
     path("cart/", views.CartView.as_view(), name="cart"),
     # Добавление товара в корзину
