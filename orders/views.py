@@ -60,7 +60,7 @@ class OrderCreateView(LoginRequiredMixin, View):
     def get(self, request):
         cart = Cart(request)
         if len(cart) == 0:
-            return redirect("orders:cart")
+            return redirect("cart")
         form = OrderCreateForm()
         return render(request, "checkout.html", {"cart": cart, "form": form})
 
@@ -94,7 +94,7 @@ class OrderCreateView(LoginRequiredMixin, View):
                     return render(request, "order_created.html", {"order": order})
             except Exception as e:
                 messages.error(request, f"Error: {str(e)}")
-                return redirect("orders:cart")
+                return redirect("cart")
         return render(request, "checkout.html", {"cart": cart, "form": form})
 
 
@@ -196,7 +196,7 @@ def cart_clear(request):
     cart.clear()
     messages.success(request, "Cart cleared")
 
-    return redirect("orders:cart")
+    return redirect("cart")
 
 
 @extend_schema_view(
