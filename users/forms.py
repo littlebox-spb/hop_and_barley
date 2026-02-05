@@ -13,7 +13,7 @@ else:
 
 class RegisterForm(UserCreation):
     email = forms.EmailField(required=True)
-    phone = forms.CharField(max_length=20, required=True)
+    phone = forms.CharField(max_length=12, required=True)
 
     class Meta:
         model = User
