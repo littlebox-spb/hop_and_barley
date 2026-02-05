@@ -36,7 +36,7 @@ function updateHeaderBadge(count) {
 
 function updateProductCard(productId, quantity) {
   const wrapper = document.querySelector(
-    `.cart-controls[data-product-id="${productId}"]`
+    `.cart-controls[data-product-id="${productId}"]`,
   );
   if (!wrapper) return;
 
@@ -117,9 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isNaN(currentQty)) return;
 
     let newQty =
-      btn.dataset.action === "increase"
-        ? currentQty + 1
-        : currentQty - 1;
+      btn.dataset.action === "increase" ? currentQty + 1 : currentQty - 1;
 
     if (newQty < 1) return;
 
@@ -134,12 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
       body: new URLSearchParams({ quantity: newQty }),
     })
       .then((res) => res.json())
-      .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
           syncFromResponse(data);
           valueEl.dataset.qty = data.quantity;
-          valueEl.textContent = `${data.quantity} in cart`
+          valueEl.textContent = `${data.quantity} in cart`;
         } else {
           return;
         }
@@ -171,15 +168,35 @@ document.addEventListener("DOMContentLoaded", function () {
             "X-CSRFToken": csrftoken,
             "X-Requested-With": "XMLHttpRequest",
           },
-        }).then(() => location.reload());
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status !== "success") return;
+
+            // 🔥 удаляем карточку товара из DOM
+            itemRow.remove();
+
+            // 🔢 обновляем бейдж
+            updateHeaderBadge(data.cart_items_count);
+
+            // 💰 обновляем total
+            const totalEl = document.getElementById("cart-total-price");
+            if (totalEl) {
+              totalEl.textContent = `$${data.cart_total}`;
+            }
+
+            // 🧼 если корзина пуста — перезагружаем (один раз)
+            if (data.cart_items_count === 0) {
+              location.reload();
+            }
+          });
       }
 
       // + / -
       if (action === "increase" || action === "decrease") {
         const qtySpan = itemRow.querySelector(".quantity-value-cart");
         let currentQty = parseInt(qtySpan.textContent, 10);
-        let newQty =
-          action === "increase" ? currentQty + 1 : currentQty - 1;
+        let newQty = action === "increase" ? currentQty + 1 : currentQty - 1;
 
         if (newQty < 1) return;
 
