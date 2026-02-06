@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "orders",
     "reviews",
     "users",
+    "admin_panel",
     "rest_framework",
 ]
 
