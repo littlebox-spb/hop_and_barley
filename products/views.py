@@ -1,9 +1,11 @@
-from django.db.models import Q, QuerySet
+from django.db.models import Q, QuerySet, Avg, Value, FloatField, Count
 from django.views.generic import DetailView, ListView, TemplateView
 from rest_framework import viewsets
 from orders.cart import Cart
 from .models import Category, Product
 from .serializers import ProductSerializer
+from reviews.forms import ReviewForm
+from django.db.models.functions import Coalesce
 
 
 class HomeView(TemplateView):
@@ -24,27 +26,68 @@ class ProductListView(ListView):
     model = Product
     template_name = "home.html"
     context_object_name = "products"
+    paginate_by = 9   # 👈 ВАЖНО
 
-    def get_queryset(self) -> QuerySet[Product]:
-        queryset = Product.objects.filter(is_active=True).select_related("category")
+    def get_queryset(self):
+        queryset = (
+            Product.objects
+            .filter(is_active=True)
+            .select_related("category")
+            .annotate(
+                avg_rating=Coalesce(
+                    Avg("reviews__rating"),
+                    0.0,
+                    output_field=FloatField()
+                ),
+                reviews_count=Count("reviews")
+            )
+        )
 
-        query = self.request.GET.get("search")
-        if query:
+        # 🔍 поиск
+        search = self.request.GET.get("search")
+        if search:
             queryset = queryset.filter(
-                Q(name__icontains=query) | Q(description__icontains=query)
+                Q(name__icontains=search) |
+                Q(description__icontains=search)
             )
 
-        category_slug = self.request.GET.get("category")
-        if category_slug:
-            queryset = queryset.filter(category__slug=category_slug)
+        # 🗂 категория
+        category = self.request.GET.get("category")
+        if category:
+            queryset = queryset.filter(category__slug=category)
+
+        # 🔃 сортировка
+        sort = self.request.GET.get("sort", "price")
+        if sort == "price":
+            queryset = queryset.order_by("price")
+        elif sort == "name":
+            queryset = queryset.order_by("name")
+        elif sort == "popular":
+            queryset = queryset.order_by("-avg_rating", "-reviews_count")
 
         return queryset
 
+    def get(self, request, *args, **kwargs):
+        response = super().get(request, *args, **kwargs)
+
+        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+            return render(request, "home.html", self.get_context_data())
+
+        return response
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        querydict = self.request.GET.copy()
+        querydict.pop("page", None)
+        querydict.pop("sort", None)
+
+        context["querystring"] = querydict.urlencode()
+
         context["categories"] = Category.objects.all()
         context["current_category"] = self.request.GET.get("category")
         context["search_query"] = self.request.GET.get("search")
+        context["current_sort"] = self.request.GET.get("sort", "price")
         return context
 
 
@@ -61,6 +104,19 @@ class ProductDetailView(DetailView):
         product_id = str(self.object.id)
 
         context["cart_quantity"] = cart.cart.get(product_id, {}).get("quantity", 0)
+
+        reviews_qs = self.object.reviews.select_related("user").order_by("-created_at")
+        context["reviews"] = reviews_qs
+
+        user = self.request.user
+        has_reviewed = False
+
+        if user.is_authenticated:
+            has_reviewed = reviews_qs.filter(user=user).exists()
+
+        context["has_reviewed"] = has_reviewed
+        context["review_form"] = ReviewForm()
+
         return context
 
 

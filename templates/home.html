@@ -1,120 +1,173 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block title %}Каталог товаров | Hop & Barley{% endblock %}
+
 {% block content %}
-    <main>
-        <section class="hero-banner">
-            <img src="{% static 'img/background/hopfen-fields.jpg' %}"
-                 alt="Beautiful hops on a dark background"
-                 class="hero-banner__image">
-            <div class="hero-banner__overlay"></div>
-        </section>
-        <div class="container main-content-grid">
-            <aside class="sidebar filter-menu">
-                <div class="sidebar__section">
-                    <h3 class="section-title">Keywords</h3>
-                    <div class="keywords-list"></div>
-                </div>
-                <div class="sidebar__section">
-                    <h3 class="section-title">Product Type</h3>
-                    <div class="category-links-group">
-                        <!-- Ссылка на все товары -->
+<main>
+
+    <section class="hero-banner">
+        <img src="{% static 'img/background/hopfen-fields.jpg' %}"
+             alt="Beautiful hops on a dark background"
+             class="hero-banner__image">
+        <div class="hero-banner__overlay"></div>
+    </section>
+
+    <div class="container main-content-grid">
+
+        <aside class="sidebar filter-menu">
+            <div class="sidebar__section">
+                <h3 class="section-title">Keywords</h3>
+                <div class="keywords-list"></div>
+            </div>
+
+            <div class="sidebar__section">
+                <h3 class="section-title">Product Type</h3>
+                <div class="category-links-group">
+
+                    <div class="category-item">
+                        <a href="{% url 'products' %}"
+                           class="{% if not current_category %}active-category{% endif %}">
+                            All Products
+                        </a>
+                    </div>
+
+                    {% for cat in categories %}
                         <div class="category-item">
-                            <a href="{% url 'products' %}"
-                               class="{% if not current_category %}active-category{% endif %}">All Products</a>
-                        </div>
-                        <!-- Динамический список из БД -->
-                        {% for cat in categories %}
-                            <div class="category-item">
-                                <a href="{% url 'products' %}?category={{ cat.slug }}"
-                                   class="{% if current_category == cat.slug %}active-category{% endif %}">
-                                    {{ cat.name }}
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </aside>
-            <section class="products-area product-grid-section">
-                <div class="search-sort-bar">
-                    <form action="{% url 'products' %}"
-                          method="get"
-                          class="search-input-wrapper">
-                        <input type="text"
-                               name="search"
-                               placeholder="Search ingredients..."
-                               class="search-input"
-                               value="{{ search_query|default:'' }}">
-                        <button type="submit" class="search-button" aria-label="Search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
-                    <div class="sort-options">
-                        <span>Sort by:</span>
-                        <button class="sort-button active-sort">Price</button>
-                        <button class="sort-button">Name</button>
-                        <button class="sort-button">Popular</button>
-                    </div>
-                </div>
-                <div class="product-grid">
-                    {% if products %}
-                        {% for product in products %}
-                            <a href="{% url 'product_detail' slug=product.slug %}"
-                               class="product-card-link">
-                                <div class="product-card">
-                                    {% if product.picture_url %}
-                                        <img src="{% static product.picture_url %}"
-                                             alt="{{ product.name }}"
-                                             class="product-card__image">
-                                    {% else %}
-                                        <img src="{% static 'img/products/placeholder.jpg' %}"
-                                             alt="{{ product.name }}"
-                                             class="product-card__image">
-                                    {% endif %}
-                                    <div class="product-card__info">
-                                        <h4 class="product-card__name">{{ product.name }}</h4>
-                                        <p class="product-card__price">${{ product.price }}</p>
-                                        <p class="product-card__description">{{ product.description|truncatewords:5 }}</p>
-                                        <!-- Короткое описание -->
-                                    </div>
-                                </div>
+                            <a href="{% url 'products' %}?category={{ cat.slug }}"
+                               class="{% if current_category == cat.slug %}active-category{% endif %}">
+                                {{ cat.name }}
                             </a>
-                        {% endfor %}
-                    {% else %}
-                        <p>Нет продуктов в БД. Добавь в админке!</p>
-                        <!-- Пример статической карточки без конкретного slug (или удали) -->
-                        <a href="{% url 'home' %}" class="product-card-link">  <!-- Временная ссылка на главную -->
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </aside>
+
+        <section class="products-area product-grid-section">
+
+            <div class="search-sort-bar">
+                <form action="{% url 'products' %}" method="get" class="search-input-wrapper">
+                    <input type="text"
+                           name="search"
+                           placeholder="Search ingredients..."
+                           class="search-input"
+                           value="{{ search_query|default:'' }}">
+                    <button type="submit" class="search-button" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <div class="sort-options">
+                    <span>Sort by:</span>
+
+<a href="?sort=price{% if querystring %}&{{ querystring }}{% endif %}"
+   class="sort-button {% if current_sort == 'price' %}active-sort{% endif %}">
+    Price
+</a>
+
+<a href="?sort=name{% if querystring %}&{{ querystring }}{% endif %}"
+   class="sort-button {% if current_sort == 'name' %}active-sort{% endif %}"
+   data-sort="name">Name</a>
+
+<a href="?sort=popular{% if querystring %}&{{ querystring }}{% endif %}"
+   class="sort-button {% if current_sort == 'popular' %}active-sort{% endif %}"
+   data-sort="popular">Popular</a>
+                    
+                </div>
+            </div>
+
+            <div class="product-grid">
+                {% if products %}
+                    {% for product in products %}
+                        <a href="{% url 'product_detail' slug=product.slug %}"
+                           class="product-card-link">
+
                             <div class="product-card">
-                                <img src="{% static 'img/products/placeholder.jpg' %}"
-                                     alt="Placeholder"
-                                     class="product-card__image">
+
+                                {% if product.picture_url %}
+                                    <img src="{% static product.picture_url %}"
+                                         alt="{{ product.name }}"
+                                         class="product-card__image">
+                                {% else %}
+                                    <img src="{% static 'img/products/placeholder.jpg' %}"
+                                         alt="{{ product.name }}"
+                                         class="product-card__image">
+                                {% endif %}
+
                                 <div class="product-card__info">
-                                    <h4 class="product-card__name">Тестовый продукт</h4>
-                                    <p class="product-card__price">$0.00</p>
-                                    <p class="product-card__description">Добавь реальные продукты!</p>
+                                    <h4 class="product-card__name">{{ product.name }}</h4>
+
+                                    <div class="product-rating">
+                                        {% with rating=product.avg_rating|default:0 %}
+{% if product.reviews_count > 0 %}
+<div class="product-rating">
+    <i class="fa-solid fa-star"></i>
+    <span class="rating-score">
+        {{ product.avg_rating|floatformat:1 }}
+    </span>
+    <span class="rating-count">
+        ({{ product.reviews_count }} reviews)
+    </span>
+</div>
+{% endif %}
+                                            <span class="rating-value">
+                                                {{ rating|floatformat:1 }}
+                                            </span>
+                                        {% endwith %}
+                                    </div>
+
+                                    <p class="product-card__price">${{ product.price }}</p>
+                                    <p class="product-card__description">
+                                        {{ product.description|truncatewords:5 }}
+                                    </p>
                                 </div>
+
                             </div>
                         </a>
-                    {% endif %}
-                </div>
-                <div class="pagination">
-                    <a href="#" class="pagination__link pagination__link--prev">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        <span>Previous</span>
-                    </a>
-                    <div class="pagination-list">
-                        <a href="#" class="pagination__link active">1</a>
-                        <a href="#" class="pagination__link">2</a>
-                        <a href="#" class="pagination__link">3</a>
-                        <span class="pagination__dots">...</span>
-                        <a href="#" class="pagination__link">20</a>
-                    </div>
-                    <a href="#" class="pagination__link pagination__link--next">
-                        <span>Next</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-            </section>
-        </div>
-    </main>
+                    {% endfor %}
+                {% else %}
+                    <p>Нет продуктов в БД. Добавь в админке!</p>
+                {% endif %}
+            </div>
+
+{% if is_paginated %}
+<div class="pagination">
+
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if querystring %}&{{ querystring }}{% endif %}"
+           class="pagination__link pagination__link--prev">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Previous</span>
+        </a>
+    {% endif %}
+
+    <div class="pagination-list">
+        {% for num in paginator.page_range %}
+            {% if num == page_obj.number %}
+                <span class="pagination__link active">{{ num }}</span>
+            {% else %}
+                <a href="?page={{ num }}{% if querystring %}&{{ querystring }}{% endif %}"
+                   class="pagination__link">
+                    {{ num }}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if querystring %}&{{ querystring }}{% endif %}"
+           class="pagination__link pagination__link--next">
+            <span>Next</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    {% endif %}
+
+</div>
+{% endif %}
+
+        </section>
+    </div>
+</main>
 {% endblock %}

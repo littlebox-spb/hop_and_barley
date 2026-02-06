@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Register | Hop & Barley{% endblock %}
+{% block title %}
+    Register | Hop & Barley
+{% endblock title %}
 {% block content %}
     <main class="auth-page-wrapper">
         <div class="auth-background">
@@ -10,7 +12,7 @@
         <div class="auth-form-container">
             <div class="auth-container auth-container--register">
                 <h1 class="auth-title">Register</h1>
-                <form class="auth-form" method="POST" action="{% url 'register' %}">
+                <form class="auth-form" method="post" action="{% url 'register' %}">
                     {% csrf_token %}
                     {% if form.errors %}<div style="color: red;">{{ form.errors }}</div>{% endif %}
                     <div class="InputField">
@@ -51,4 +53,4 @@
             </div>
         </div>
     </main>
-{% endblock %}
+{% endblock content %}

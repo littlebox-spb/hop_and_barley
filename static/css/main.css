@@ -354,6 +354,11 @@ header {
     padding: 0;
 }
 
+.sort-options span {
+    position: relative;
+    top: 8px;
+}
+
 .sort-options {
     display: flex;
     gap: 8px;
@@ -437,6 +442,20 @@ header {
     color: var(--grey-text);
 }
 
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #f59e0b; /* золотые звезды */
+    font-size: 14px;
+}
+
+.product-rating .rating-value {
+    color: #6b7280;
+    margin-left: 4px;
+    font-size: 13px;
+}
+
 /* Pagination */
 .pagination {
     width: 100%;
@@ -449,6 +468,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    position: relative;
 }
 
 .pagination-list {
@@ -782,12 +802,6 @@ footer {
     Header User Actions (Logged-in state)
 ========================================
 */
-.header__user-actions {
-    display: none;
-    align-items: center;
-    gap: 24px;
-}
-
 .user-icon, .cart-icon {
     display: block;
     width: 38px;
@@ -806,26 +820,17 @@ footer {
     padding: 8px 16px;
 }
 
-/*
-========================================
-    Logic for Hiding/Showing Auth Blocks
-========================================
-*/
-
-body:not(.user-logged-in) .header__user-actions {
-    display: none;
-}
-body:not(.user-logged-in) .header__auth-buttons {
+.header__user-actions {
     display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
-body.user-logged-in .header__auth-buttons {
-    display: none;
-}
-body.user-logged-in .header__user-actions {
+.header__auth-buttons {
     display: flex;
+    align-items: center;
+    gap: 12px;
 }
-
 
 /*
 ========================================
@@ -2003,4 +2008,11 @@ body.user-logged-in .header__user-actions {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.pagination-list a {
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
 }

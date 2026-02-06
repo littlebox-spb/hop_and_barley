@@ -49,18 +49,43 @@
             </li>
           </ul>
         </nav>
-        <div class="header__auth-buttons" id="auth-guest">
-          <a href="{% url 'login' %}" class="button button--secondary">Sign in</a>
-          <a href="{% url 'register' %}" class="button button--primary">Register</a>
-        </div>
-        <div class="header__user-actions" id="auth-user">
-          <a href="#" class="user-icon" aria-label="My Account">
-            <img src="{% static 'img/icons/User_alt.svg' %}" alt="User Account" />
-          </a>
-          <a href="#" class="cart-icon" aria-label="Shopping Cart">
-            <img src="{% static 'img/icons/Shopping_bag.svg' %}" alt="Shopping Cart" />
-          </a>
-        </div>
+
+
+{% if user.is_authenticated %}
+  <div class="header__user-actions">
+    <span class="header__username">
+      Hi, {{ user.username }}
+    </span>
+
+    <a href="{% url 'profile' %}" class="user-icon" aria-label="My Account">
+      <img src="{% static 'img/icons/User_alt.svg' %}" alt="User Account" />
+    </a>
+
+    <a href="{% url 'cart' %}" class="cart-icon" aria-label="Shopping Cart">
+      <img src="{% static 'img/icons/Shopping_bag.svg' %}" alt="Shopping Cart" />
+    </a>
+
+    
+    
+    
+<form method="post" action="{% url 'logout' %}">
+  {% csrf_token %}
+  <button type="submit" class="button button--logout">
+    Logout
+  </button>
+</form>
+
+
+  </div>
+{% else %}
+  <div class="header__auth-buttons">
+    <a href="{% url 'login' %}" class="button button--secondary">Sign in</a>
+    <a href="{% url 'register' %}" class="button button--primary">Register</a>
+  </div>
+{% endif %}
+
+
+
       </div>
     </header>
     <div id="toast" class="toast" aria-live="polite"></div>

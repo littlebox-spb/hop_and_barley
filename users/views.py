@@ -4,6 +4,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
 from django.views.decorators.http import require_POST
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 from orders.models import Order
 

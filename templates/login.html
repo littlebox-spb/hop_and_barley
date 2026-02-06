@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Sign In | Hop & Barley{% endblock %}
+{% block title %}
+  Sign In | Hop & Barley
+{% endblock title %}
 {% block content %}
   <main class="auth-page-wrapper">
     <div class="auth-background">
@@ -10,7 +12,7 @@
     <div class="auth-form-container">
       <div class="auth-container auth-container--login">
         <h1 class="auth-title">Sign In</h1>
-        <form class="auth-form" method="POST" action="{% url 'login' %}">
+        <form class="auth-form" method="post" action="{% url 'login' %}">
           {% csrf_token %}
           <div class="InputField">
             <label for="username">Username</label>
@@ -23,6 +25,9 @@
           <div class="ButtonGroup">
             <button type="submit" class="button button--primary">Sign In</button>
           </div>
+          <div class="TextLink">
+            <a href="{% url 'password_reset' %}">Forgot password?</a>
+          </div>
         </form>
         <p class="auth-switch">
           Don't have an account? <a href="{% url 'register' %}">Sign up</a>
@@ -30,4 +35,4 @@
       </div>
     </div>
   </main>
-{% endblock %}
+{% endblock content %}
