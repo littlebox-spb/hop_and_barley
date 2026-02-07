@@ -1,172 +1,83 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}
-  Admin - Product Stock | Hop & Barley
-{% endblock title %}
+{% block title %}Admin - Product Stock | Hop & Barley{% endblock %}
+
 {% block content %}
-  <main class="admin-page-wrapper">
-    <div class="admin-container">
-      <!-- Tabs Navigation -->
-      <div class="admin-tabs">
-        {# ПРИМЕЧАНИЕ: Тебе нужно будет создать URL'ы с именами 'admin_products' и 'admin_dashboard' #}
-        <a href="#" class="admin-tab active">Product Management</a>
-        <a href="#" class="admin-tab">Dashboard</a>
-      </div>
-      <!-- Content Area -->
-      <div class="admin-content">
-        <h1 class="admin-content__title">Admin - Product Stock</h1>
-        <div class="admin-actions">
-          {# ПРИМЕЧАНИЕ: Тебе нужно будет создать URL с именем 'admin_product_add' #}
-          <a href="#" class="button button--primary">
-            <i class="fa-solid fa-plus"></i>
-            <span>Add Product</span>
-          </a>
-        </div>
-        <div class="admin-table-wrapper">
-          <table class="admin-table">
-            <thead>
-              <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>description</th>
-                <th>price</th>
-                <th>category</th>
-                <th>created_at</th>
-                <th>updated_at</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$100.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                {# ПРИМЕЧАНИЕ: Тебе нужно будет создать URL с именем 'admin_product_edit'. Был add.html, но такого шаблона нет. #}
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$90.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$140.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$120.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$20.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$20.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$20.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$20.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$20.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-              <tr>
-                <td>122033</td>
-                <td>name</td>
-                <td>description</td>
-                <td>$20.00</td>
-                <td>category</td>
-                <td>YYYY-MM-DD</td>
-                <td>YYYY-MM-DD</td>
-                <td>
-                  <a href="#" class="button button--edit">Edit</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- Pagination -->
-        <div class="account-pagination">
-          <a href="#" class="pagination-link-account disabled">← Previous</a>
-          <a href="#" class="pagination-link-account">Next →</a>
-        </div>
-      </div>
+<main class="admin-page-wrapper">
+  <div class="admin-container">
+
+    <div class="admin-tabs">
+      <a href="{% url 'admin_products' %}" class="admin-tab active">Product Management</a>
+      <a href="{% url 'admin_dashboard' %}" class="admin-tab">Dashboard</a>
     </div>
-  </main>
-{% endblock content %}
+
+    <div class="admin-content">
+      <h1 class="admin-content__title">Admin - Product Stock</h1>
+
+      <div class="admin-actions">
+        <a href="{% url 'admin_product_add' %}" class="button button--primary">
+          <i class="fa-solid fa-plus"></i>
+          Add Product
+        </a>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Created</th>
+              <th>Updated</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+            <tr>
+              <td>{{ product.id }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.description|truncatewords:6 }}</td>
+              <td>${{ product.price }}</td>
+              <td>{{ product.category.name }}</td>
+              <td>{{ product.created_at|date:"Y-m-d" }}</td>
+              <td>{{ product.updated_at|date:"Y-m-d" }}</td>
+              <td>
+                <a href="{% url 'admin_product_edit' product.id %}"
+                   class="button button--edit">Edit</a>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="8">No products yet.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% if is_paginated %}
+      <div class="account-pagination">
+        {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number }}"
+             class="pagination-link-account">← Previous</a>
+        {% else %}
+          <span class="pagination-link-account disabled">← Previous</span>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}"
+             class="pagination-link-account">Next →</a>
+        {% else %}
+          <span class="pagination-link-account disabled">Next →</span>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</main>
+{% endblock %}

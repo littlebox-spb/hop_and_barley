@@ -27,6 +27,7 @@ urlpatterns: list[URLResolver | URLPattern] = [
     path("", include("orders.urls")),
     path("", include("products.urls")),
     path("reviews/", include("reviews.urls")),
+    path("admin-panel/", include("admin_panel.urls")),
 ]
 
 if settings.DEBUG:
