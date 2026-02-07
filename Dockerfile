@@ -13,6 +13,7 @@ ENV POETRY_VERSION=2.1.1
 RUN pip install poetry==2.1.1
 
 ENV PATH="/root/.local/bin:$PATH"
+ENV SECRET_KEY="django-insecure-0x3%*k!%6^8)0#4m%+j&+&6b0$g%&r!^2@^)g%&4!4$!&t4"
 
 WORKDIR /app
 
