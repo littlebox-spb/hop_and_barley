@@ -10,6 +10,7 @@ class ProductAdminForm(forms.ModelForm):
             "name",
             "description",
             "price",
+            "stock",
             "category",
             "is_active",
         ]

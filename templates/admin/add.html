@@ -110,12 +110,17 @@ Admin - Add/Edit Product | Hop & Barley
             {{ form.description }}
           </div>
 
-          <div class="checkout-form-group">
-            <label>Price</label>
-            {{ form.price }}
-          </div>
+<div class="checkout-form-group form-row-2">
+  <div class="form-col">
+    <label>Price</label>
+    {{ form.price }}
+  </div>
 
-          <div class="checkout-form-group">
+  <div class="form-col">
+    <label>Stock</label>
+    {{ form.stock }}
+  </div>
+</div>          <div class="checkout-form-group">
             <label>Category</label>
             {{ form.category }}
           </div>

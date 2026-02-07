@@ -184,3 +184,23 @@ class AdminCategoryDeleteView(StaffRequiredMixin, View):
 
         cat.delete()
         return JsonResponse({"ok": True})
+
+
+class AdminDashboardView(StaffRequiredMixin, TemplateView):
+    template_name = "admin/dashboard.html"
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+
+        ctx["total_sales"] = (
+            Order.objects.filter(status="paid").aggregate(total=Sum("total_price"))[
+                "total"
+            ]
+            or 0
+        )
+
+        ctx["total_users"] = User.objects.count()
+        ctx["total_orders"] = Order.objects.count()
+        ctx["pending_orders"] = Order.objects.filter(status="pending").count()
+
+        return ctx
