@@ -57,35 +57,43 @@ Admin - Add/Edit Product | Hop & Barley
                 class="is-hidden">
               </div>
 
-          <!-- ✅ КАТЕГОРИИ ПОД КАРТИНКОЙ -->
-          <div class="admin-categories-block">
-            <h3 class="admin-form-section-title">Categories</h3>
 
-            <div class="category-tags" id="category-list">
-              {% for cat in categories %}
-                <button
-                  type="button"
-                  class="category-tag removable"
-                  data-delete-url="{% url 'admin_category_delete' cat.id %}">
-                  {{ cat.name }}
-                  <span class="remove-x">✕</span>
-                </button>
-              {% endfor %}
-            </div>
+<!-- ✅ КАТЕГОРИИ (НЕ СВЯЗАНЫ С ПРОДУКТОМ) -->
+<div class="admin-categories-block">
+  <h3 class="admin-form-section-title">Categories</h3>
 
-            <div class="admin-category-add">
-              <input type="text"
-                     id="new-category-name"
-                     class="Input"
-                     placeholder="New category">
-              <button type="button"
-                      class="button button--primary"
-                      id="add-category-btn"
-                      data-add-url="{% url 'admin_category_add' %}">
-                Add
-              </button>
-            </div>
-          </div>
+  <select id="category-select" class="Input">
+    <option value="">— Select category —</option>
+    {% for cat in categories %}
+      <option value="{{ cat.id }}">{{ cat.name }}</option>
+    {% endfor %}
+  </select>
+
+  <input
+    type="text"
+    id="category-input"
+    class="Input"
+    placeholder="New category name">
+
+  <div class="admin-category-actions">
+    <button
+      type="button"
+      class="button button--primary"
+      id="category-add-btn"
+      data-add-url="{% url 'admin_category_add' %}">
+      Add
+    </button>
+
+    <button
+      type="button"
+      class="button button--danger"
+      id="category-del-btn"
+      data-del-url-template="{% url 'admin_category_delete' 0 %}">
+      Del
+    </button>
+  </div>
+</div>
+
         </div>
 
         <!-- ➡ RIGHT COLUMN -->
@@ -133,6 +141,7 @@ Admin - Add/Edit Product | Hop & Barley
     </div>
   </div>
 </main>
-
+{% block scripts %}
 <script src="{% static 'js/admin.js' %}"></script>
+{% endblock %}
 {% endblock %}

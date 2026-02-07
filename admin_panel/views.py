@@ -1,22 +1,27 @@
 # admin_panel/views.py
-from django.views.generic import (
-    TemplateView,
-    ListView,
-    CreateView,
-    UpdateView,
-    DeleteView,
-)
-from django.db.models import Sum, Count
-from django.urls import reverse_lazy
+import json
 
-from products.models import Category, Product
-from orders.models import Order
-from users.models import User
-from .mixins import StaffRequiredMixin
-from .forms import ProductAdminForm
-from django.shortcuts import redirect
 from django.contrib import messages
+from django.db.models import Count, Sum
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse_lazy
 from django.utils.text import slugify
+from django.views import View
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    ListView,
+    TemplateView,
+    UpdateView,
+)
+
+from orders.models import Order
+from products.models import Category, Product
+from users.models import User
+
+from .forms import ProductAdminForm
+from .mixins import StaffRequiredMixin
 
 
 class AdminDashboardView(StaffRequiredMixin, TemplateView):
@@ -92,6 +97,11 @@ class AdminProductCreateView(StaffRequiredMixin, CreateView):
 
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx["categories"] = Category.objects.order_by("name")
+        return ctx
+
 
 class AdminProductUpdateView(StaffRequiredMixin, UpdateView):
     model = Product
@@ -131,34 +141,46 @@ class AdminProductUpdateView(StaffRequiredMixin, UpdateView):
 
         return redirect(self.success_url)
 
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx["categories"] = Category.objects.order_by("name")
+        return ctx
+
 
 class AdminCategoryCreateView(StaffRequiredMixin, CreateView):
     model = Category
     fields = ["name"]
-    success_url = reverse_lazy("admin_product_add")
 
-    def form_valid(self, form):
-        category = form.save(commit=False)
-        category.slug = slugify(category.name)
+    def post(self, request, *args, **kwargs):
+        try:
+            data = json.loads(request.body)
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
 
-        if Category.objects.filter(slug=category.slug).exists():
-            messages.error(self.request, "Category already exists.")
-            return redirect(self.success_url)
+        name = data.get("name", "").strip()
+        if not name:
+            return JsonResponse({"error": "Empty name"}, status=400)
 
-        category.save()
-        messages.success(self.request, "Category added.")
-        return redirect(self.success_url)
+        slug = slugify(name)
+        if Category.objects.filter(slug=slug).exists():
+            return JsonResponse({"error": "Category already exists"}, status=400)
+
+        cat = Category.objects.create(name=name, slug=slug)
+
+        return JsonResponse(
+            {
+                "id": cat.id,
+                "name": cat.name,
+            }
+        )
 
 
-class AdminCategoryDeleteView(StaffRequiredMixin, DeleteView):
-    model = Category
-    success_url = reverse_lazy("admin_products")
+class AdminCategoryDeleteView(StaffRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        cat = get_object_or_404(Category, pk=kwargs["pk"])
 
-    def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
+        if Product.objects.filter(category=cat).exists():
+            return JsonResponse({"error": "Category has products"}, status=400)
 
-        if Product.objects.filter(category=self.object).exists():
-            messages.error(request, "Cannot delete category with assigned products.")
-            return redirect(self.success_url)
-
-        return super().delete(request, *args, **kwargs)
+        cat.delete()
+        return JsonResponse({"ok": True})

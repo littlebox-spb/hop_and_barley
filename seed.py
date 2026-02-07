@@ -2,6 +2,7 @@ import os
 
 # --- Django init ---
 import django
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
 
@@ -599,6 +600,6 @@ product, created = Product.objects.get_or_create(
 )
 
 if created:
-    print("✅ Product created:", product.name)
+    print("✅ All products created!")
 else:
-    print("⚠ Product already exists:", product.name)
+    print("❌ Error! Products not created!")

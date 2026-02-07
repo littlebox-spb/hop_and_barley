@@ -111,3 +111,58 @@ document.addEventListener("DOMContentLoaded", () => {
     reader.readAsDataURL(file);
   });
 });
+
+// KATEGORIES
+
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("category-select");
+  const input = document.getElementById("category-input");
+  const addBtn = document.getElementById("category-add-btn");
+  const delBtn = document.getElementById("category-del-btn");
+
+  const csrf = document.querySelector(
+    'input[name="csrfmiddlewaretoken"]'
+  ).value;
+
+  // ➕ ADD
+  addBtn.addEventListener("click", () => {
+    const name = input.value.trim();
+    if (!name) return;
+
+    fetch(addBtn.dataset.addUrl, {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": csrf,
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: JSON.stringify({ name }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) return alert(data.error);
+        location.reload();
+      });
+  });
+
+  // ❌ DELETE
+  delBtn.addEventListener("click", () => {
+    const id = select.value;
+    if (!id) return alert("Select category");
+
+    const url = delBtn.dataset.delUrlTemplate.replace("0", id);
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": csrf,
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) alert(data.error);
+        else location.reload();
+      });
+  });
+});

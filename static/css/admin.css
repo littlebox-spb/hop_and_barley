@@ -96,3 +96,13 @@
   opacity: 1;
   color: #c81e1e;
 }
+
+.admin-category-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.admin-category-actions .button {
+  flex: 1;
+}
