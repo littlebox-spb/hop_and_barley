@@ -105,4 +105,5 @@ exclude = [
 django_settings_module = "config.settings"
 
 [tool.djlint]
-ignore = "H006"
+profile = "django"
+extend-ignore = "H006,T002,T003"

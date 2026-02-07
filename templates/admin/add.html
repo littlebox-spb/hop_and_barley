@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Admin - Add/Edit Product | Hop & Barley{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
+
+{% block title %}
+Admin - Add/Edit Product | Hop & Barley
+{% endblock %}
 
 {% block content %}
 <main class="admin-page-wrapper">
   <div class="admin-container">
 
+    <!-- Tabs -->
     <div class="admin-tabs">
-      <a href="{% url 'admin_products' %}" class="admin-tab active">Product Management</a>
-      <a href="{% url 'admin_dashboard' %}" class="admin-tab">Dashboard</a>
+      <a href="{% url 'admin_products' %}" class="admin-tab active">
+        Product Management
+      </a>
+      <a href="{% url 'admin_dashboard' %}" class="admin-tab">
+        Dashboard
+      </a>
     </div>
 
     <div class="admin-content">
@@ -16,24 +28,67 @@
         {% if object %}Edit Product{% else %}Add Product{% endif %}
       </h1>
 
-      <form method="post" enctype="multipart/form-data"
-            class="admin-form-layout">
+      <!-- ✅ ЕДИНСТВЕННАЯ ФОРМА -->
+      <form method="post"
+            enctype="multipart/form-data"
+            class="admin-form-layout"
+            id="product-form">
         {% csrf_token %}
-
+        <!-- ⬅ LEFT COLUMN -->
         <div class="admin-form-col-left">
           <h2 class="admin-form-section-title">Image</h2>
-          <div class="image-upload-card">
-            <div class="image-upload-placeholder">
-              {% if object and object.picture %}
-                <img src="{{ object.picture.url }}" style="width:100%;border-radius:8px;">
+
+          <div class="image-upload-card" id="image-card">
+            <div class="image-upload-placeholder" id="image-placeholder">
+              {% if object and object.picture_url %}
+                <img src="{% static object.picture_url %}"
+                     alt=""
+                     style="width:100%;border-radius:8px;">
               {% else %}
                 <i class="fa-regular fa-image"></i>
               {% endif %}
             </div>
-            {{ form.picture }}
+
+            <!-- 🔒 скрытое поле -->
+              <input type="file"
+                id="image-input"
+                name="picture"
+                accept=".jpg,.jpeg"
+                class="is-hidden">
+              </div>
+
+          <!-- ✅ КАТЕГОРИИ ПОД КАРТИНКОЙ -->
+          <div class="admin-categories-block">
+            <h3 class="admin-form-section-title">Categories</h3>
+
+            <div class="category-tags" id="category-list">
+              {% for cat in categories %}
+                <button
+                  type="button"
+                  class="category-tag removable"
+                  data-delete-url="{% url 'admin_category_delete' cat.id %}">
+                  {{ cat.name }}
+                  <span class="remove-x">✕</span>
+                </button>
+              {% endfor %}
+            </div>
+
+            <div class="admin-category-add">
+              <input type="text"
+                     id="new-category-name"
+                     class="Input"
+                     placeholder="New category">
+              <button type="button"
+                      class="button button--primary"
+                      id="add-category-btn"
+                      data-add-url="{% url 'admin_category_add' %}">
+                Add
+              </button>
+            </div>
           </div>
         </div>
 
+        <!-- ➡ RIGHT COLUMN -->
         <div class="admin-form-col-right">
           <h2 class="admin-form-section-title">Information</h2>
 
@@ -58,19 +113,26 @@
           </div>
 
           <div class="checkout-form-group">
-            <label>
+            <label class="checkbox-inline">
               {{ form.is_active }} Active
             </label>
           </div>
-        </div>
 
-        <div class="admin-form-actions">
-          <button type="submit" class="button button--primary">Save</button>
-          <a href="{% url 'admin_products' %}"
-             class="button button--secondary">Cancel</a>
+          <!-- ✅ КНОПКИ СТРОГО СПРАВА -->
+          <div class="admin-form-actions">
+            <button type="submit" class="button button--primary">
+              Save
+            </button>
+            <a href="{% url 'admin_products' %}"
+               class="button button--secondary">
+              Cancel
+            </a>
+          </div>
         </div>
       </form>
     </div>
   </div>
 </main>
+
+<script src="{% static 'js/admin.js' %}"></script>
 {% endblock %}

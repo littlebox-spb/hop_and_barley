@@ -11,6 +11,5 @@ class ProductAdminForm(forms.ModelForm):
             "description",
             "price",
             "category",
-            "picture_url",
             "is_active",
         ]

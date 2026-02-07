@@ -1,0 +1,98 @@
+/* Admin form overrides */
+.admin-content input,
+.admin-content select,
+.admin-content textarea {
+    height: 48px;
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.admin-content textarea {
+    min-height: 120px;
+}
+
+.checkout-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --- Admin Categories Block --- */
+.admin-categories {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* список категорий */
+.admin-categories .category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* форма добавления */
+.category-add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ← кнопка Add опущена */
+  margin-top: 10px;
+}
+
+.admin-category-add {
+  margin-top: 10px;        /* 👈 отлипание от поля */
+  display: flex;
+  gap: 8px;
+}
+
+.admin-category-add .Input {
+  flex: 1;
+}
+
+/* кнопка категории */
+.category-tag.removable {
+  background-color: var(--slate-200);
+  border: 1px solid var(--border-default);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* крестик */
+.category-remove {
+  font-weight: bold;
+  color: #c81e1e;
+  font-size: 14px;
+}
+
+/* hover */
+.category-tag.removable:hover {
+  background-color: #fbebeb;
+}
+
+.category-tag {
+  position: relative;
+  padding-right: 28px; /* место под ✕ */
+}
+
+/* ✕ кнопка */
+.category-tag .remove-x {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.category-tag:hover .remove-x {
+  opacity: 1;
+  color: #c81e1e;
+}
