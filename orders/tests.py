@@ -1,6 +1,6 @@
+from django.contrib.auth import get_user_model
 from django.core import mail
 from django.test import TestCase
-from django.contrib.auth import get_user_model
 
 from orders.models import Order
 from services.email_service import send_order_created_emails

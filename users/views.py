@@ -1,11 +1,11 @@
-from typing import Any, Self, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Self, cast
 
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, TemplateView
-from django.views.decorators.http import require_POST
 from django.contrib.auth import logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
+from django.views.decorators.http import require_POST
+from django.views.generic import CreateView, TemplateView
 
 from orders.models import Order
 
@@ -29,13 +29,13 @@ class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = "account.html"
 
     def get_context_data(self: Self, **kwargs: Any) -> dict[str, Any]:
+        user = cast(User, self.request.user)
         context = super().get_context_data(**kwargs)
-        context["orders"] = Order.objects.filter(user=self.request.user).order_by(
-            "-created_at"
-        )
+        context["orders"] = Order.objects.filter(user=user).order_by("-created_at")
         return context
 
+
 @require_POST
-def logout_view(request):
+def logout_view(request: Any) -> Any:
     logout(request)
-    return redirect('home')
+    return redirect("home")

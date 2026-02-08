@@ -1,11 +1,13 @@
-from django.db.models import Q, QuerySet, Avg, Value, FloatField, Count
+from django.db.models import Avg, Count, FloatField, Q, QuerySet
+from django.db.models.functions import Coalesce
 from django.views.generic import DetailView, ListView, TemplateView
 from rest_framework import viewsets
+
 from orders.cart import Cart
+from reviews.forms import ReviewForm
+
 from .models import Category, Product
 from .serializers import ProductSerializer
-from reviews.forms import ReviewForm
-from django.db.models.functions import Coalesce
 
 
 class HomeView(TemplateView):
@@ -91,7 +93,6 @@ class ProductListView(ListView):
         return context
 
 
-from orders.cart import Cart
 
 class ProductDetailView(DetailView):
     model = Product

@@ -2,7 +2,6 @@
 Модуль корзины для управления товарами в сессии пользователя.
 """
 from decimal import Decimal
-from typing import Dict
 
 from django.conf import settings
 
@@ -23,6 +22,7 @@ class Cart:
 
         Args:
             request: HTTP запрос с доступом к сессии
+
         """
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
@@ -33,7 +33,7 @@ class Cart:
 
         self.cart = cart
 
-    def add(self, product: Product, quantity: int = 1, override_quantity: bool = False) -> Dict[str, str]:
+    def add(self, product: Product, quantity: int = 1, override_quantity: bool = False) -> dict[str, str]:
         """
         Добавить товар в корзину или обновить его количество.
 
@@ -44,6 +44,7 @@ class Cart:
 
         Returns:
             Dict с результатом операции: {'status': 'success/error', 'message': str}
+
         """
         product_id = str(product.id)
 
@@ -89,6 +90,7 @@ class Cart:
 
         Args:
             product: Объект Product для удаления
+
         """
         product_id = str(product.id)
 
@@ -96,7 +98,7 @@ class Cart:
             del self.cart[product_id]
             self.save()
 
-    def update(self, product: Product, quantity: int) -> Dict[str, str]:
+    def update(self, product: Product, quantity: int) -> dict[str, str]:
         """
         Обновить количество товара в корзине.
 
@@ -106,6 +108,7 @@ class Cart:
 
         Returns:
             Dict с результатом операции
+
         """
         if quantity <= 0:
             self.remove(product)
@@ -131,6 +134,7 @@ class Cart:
 
         Yields:
             Dict с информацией о товаре: product, quantity, price, total_price
+
         """
         product_ids = self.cart.keys()
         products = Product.objects.filter(id__in=product_ids)
@@ -150,6 +154,7 @@ class Cart:
 
         Returns:
             Общее количество всех товаров
+
         """
         return sum(item['quantity'] for item in self.cart.values())
 
@@ -159,6 +164,7 @@ class Cart:
 
         Returns:
             Decimal с общей суммой
+
         """
         return sum(
             Decimal(item['price']) * item['quantity']
@@ -171,5 +177,6 @@ class Cart:
 
         Returns:
             Количество различных товаров
+
         """
         return len(self.cart)

@@ -1,8 +1,7 @@
 # admin_panel/views.py
 import json
 
-from django.contrib import messages
-from django.db.models import Count, Sum
+from django.db.models import Sum
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -10,7 +9,6 @@ from django.utils.text import slugify
 from django.views import View
 from django.views.generic import (
     CreateView,
-    DeleteView,
     ListView,
     TemplateView,
     UpdateView,
@@ -53,6 +51,7 @@ class AdminProductListView(StaffRequiredMixin, ListView):
 
 import uuid
 from pathlib import Path
+
 from django.conf import settings
 
 

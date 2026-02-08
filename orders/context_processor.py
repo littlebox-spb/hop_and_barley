@@ -14,5 +14,6 @@ def cart(request):
 
     Returns:
         Dict с объектом корзины
+
     """
     return {'cart': Cart(request)}

@@ -11,13 +11,13 @@ from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework import permissions, viewsets
 
 from products.models import Product
+from services.async_utils import run_async
+from services.email_service import send_order_created_emails
 
 from .cart import Cart
 from .forms import OrderCreateForm
 from .models import Order, OrderItem
 from .serializers import OrderSerializer
-from services.async_utils import run_async
-from services.email_service import send_order_created_emails
 
 
 class CartView(View):
@@ -34,6 +34,7 @@ class CartView(View):
 
         Returns:
             HttpResponse с отрендеренным шаблоном корзины
+
         """
         cart = Cart(request)
 
@@ -116,6 +117,7 @@ def cart_add(request, product_id: int):
 
     Returns:
         JsonResponse с результатом операции
+
     """
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id, is_active=True)
@@ -167,6 +169,7 @@ def cart_update(request, product_id: int):
 
     Returns:
         JsonResponse с результатом
+
     """
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id, is_active=True)
@@ -198,6 +201,7 @@ def cart_clear(request):
 
     Returns:
         Redirect на страницу корзины
+
     """
     cart = Cart(request)
     cart.clear()

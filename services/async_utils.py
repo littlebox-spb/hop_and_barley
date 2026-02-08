@@ -1,5 +1,5 @@
-import threading
 import logging
+import threading
 
 logger = logging.getLogger("orders.email")
 
