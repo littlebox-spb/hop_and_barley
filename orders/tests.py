@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 
 from orders.models import Order
-from orders.services.email_service import send_order_created_emails
+from services.email_service import send_order_created_emails
 
 User = get_user_model()
 

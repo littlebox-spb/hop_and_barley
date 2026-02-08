@@ -16,8 +16,8 @@ from .cart import Cart
 from .forms import OrderCreateForm
 from .models import Order, OrderItem
 from .serializers import OrderSerializer
-from .services.async_utils import run_async
-from .services.email_service import send_order_created_emails
+from services.async_utils import run_async
+from services.email_service import send_order_created_emails
 
 
 class CartView(View):
