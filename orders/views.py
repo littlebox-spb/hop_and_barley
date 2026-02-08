@@ -16,6 +16,8 @@ from .cart import Cart
 from .forms import OrderCreateForm
 from .models import Order, OrderItem
 from .serializers import OrderSerializer
+from .services.async_utils import run_async
+from .services.email_service import send_order_created_emails
 
 
 class CartView(View):
@@ -91,6 +93,11 @@ class OrderCreateView(LoginRequiredMixin, View):
 
                     cart.clear()
                     messages.success(request, f"Order #{order.id} created!")
+
+                    transaction.on_commit(
+                        lambda: run_async(send_order_created_emails, order)
+                    )
+
                     return render(request, "order_created.html", {"order": order})
             except Exception as e:
                 messages.error(request, f"Error: {str(e)}")

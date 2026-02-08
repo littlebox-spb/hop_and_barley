@@ -1,0 +1,5 @@
+Создан новый заказ №{{ order.id }}
+
+Пользователь: {{ order.user }}
+Email: {{ order.email }}
+Сумма: {{ order.total_price }} €
