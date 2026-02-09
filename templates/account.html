@@ -49,6 +49,13 @@
               </div>
               <button type="submit" class="button button--primary">Save Changes</button>
             </form>
+            {% if user.is_staff %}
+              <a href="{% url 'admin_dashboard' %}"
+                 class="button button--primary"
+                 style="margin-top: 10px;">
+                Admin panel
+              </a>
+            {% endif %}
             <hr style="margin: 20px 0; opacity: 0.1;">
             <form action="{% url 'logout' %}" method="POST">
               {% csrf_token %}

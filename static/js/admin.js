@@ -1,168 +1,163 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const showToast = (message, type = "success") => {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
 
-  const csrftoken = document.querySelector(
+  toast.textContent = message;
+  toast.className = `toast toast--show toast--${type}`;
+
+  // Скрываем через 3 секунды
+  setTimeout(() => {
+    toast.className = "toast";
+  }, 3000);
+};
+
+  const csrf = document.querySelector(
     'input[name="csrfmiddlewaretoken"]'
   )?.value;
 
-  /* ---------- ADD CATEGORY ---------- */
-  const addBtn = document.getElementById("add-category-btn");
-  const input = document.getElementById("new-category-name");
-  const list = document.getElementById("category-list");
+  /* ================================
+     CATEGORIES (ADMIN, NOT PRODUCT)
+     ================================ */
 
-  if (addBtn && input && list) {
+  const categorySelect = document.getElementById("category-select"); // слева
+  const categoryInput = document.getElementById("category-input");
+  const addBtn = document.getElementById("category-add-btn");
+  const delBtn = document.getElementById("category-del-btn");
+
+  const productCategorySelect =
+    document.querySelector('select[name="category"]'); // справа
+
+  if (addBtn && categoryInput && categorySelect) {
     addBtn.addEventListener("click", () => {
-      const name = input.value.trim();
+      const name = categoryInput.value.trim();
       if (!name) return;
 
       fetch(addBtn.dataset.addUrl, {
         method: "POST",
         headers: {
-          "X-CSRFToken": csrftoken,
-          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRFToken": csrf,
           "Content-Type": "application/json",
+          "X-Requested-With": "XMLHttpRequest",
         },
         body: JSON.stringify({ name }),
       })
         .then(res => res.json())
         .then(data => {
           if (data.error) {
-            alert(data.error);
+            showToast(data.error, "danger");
             return;
           }
 
-          const btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "category-tag removable";
-          btn.dataset.deleteUrl = data.delete_url;
-          btn.innerHTML = `${data.name} <span class="remove-x">✕</span>`;
+          // ⬅ левый select
+          const optLeft = document.createElement("option");
+          optLeft.value = data.id;
+          optLeft.textContent = data.name;
+          categorySelect.appendChild(optLeft);
+          categorySelect.value = data.id;
 
-          list.appendChild(btn);
-          input.value = "";
+          // ➡ правый select (product.category)
+          if (productCategorySelect) {
+            const optRight = document.createElement("option");
+            optRight.value = data.id;
+            optRight.textContent = data.name;
+            productCategorySelect.appendChild(optRight);
+          }
+
+          categoryInput.value = "";
+        })
+        .catch(err => {
+          console.error(err);
+          showToast("Category add failed", "danger");
         });
     });
   }
 
-  /* ---------- DELETE CATEGORY ---------- */
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".category-tag.removable");
-    if (!btn) return;
+  if (delBtn && categorySelect) {
+    delBtn.addEventListener("click", () => {
+      const id = categorySelect.value;
+      if (!id) {
+        showToast("Select category", "danger");
+        return;
+      }
 
-    const url = btn.dataset.deleteUrl;
-    if (!confirm("Delete this category?")) return;
+      const url = delBtn.dataset.delUrlTemplate.replace("0", id);
 
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "X-CSRFToken": csrftoken,
-        "X-Requested-With": "XMLHttpRequest",
-      },
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.error) {
-          alert(data.error);
-        } else {
-          btn.remove();
-        }
-      });
-  });
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "X-CSRFToken": csrf,
+          "X-Requested-With": "XMLHttpRequest",
+        },
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.error) {
+            showToast(data.error, "danger");
+            return;
+          }
 
-});
+          // ❌ удалить из левого
+          categorySelect
+            .querySelector(`option[value="${id}"]`)
+            ?.remove();
 
-/* ---------- IMAGE UPLOAD ---------- */
-document.addEventListener("DOMContentLoaded", () => {
-  const card = document.getElementById("image-card");
-  const input = document.getElementById("image-input");
-  const placeholder = document.getElementById("image-placeholder");
+          // ❌ удалить из правого
+          productCategorySelect
+            ?.querySelector(`option[value="${id}"]`)
+            ?.remove();
 
-  if (!card || !input || !placeholder) return;
+          categorySelect.value = "";
+        })
+        .catch(err => {
+          console.error(err);
+          showToast("Category delete failed", "danger");
+        });
+    });
+  }
 
-  // Клик по карточке → открыть диалог
-  card.addEventListener("click", () => input.click());
+  /* ================================
+     IMAGE UPLOAD (НЕ ТРОГАЕМ)
+     ================================ */
 
-  input.addEventListener("change", () => {
-    const file = input.files[0];
-    if (!file) return;
+  const imageInput = document.getElementById("image-input");
+  const imagePlaceholder = document.getElementById("image-placeholder");
 
-    // 🔒 ВАЛИДАЦИЯ
-    if (!["image/jpeg", "image/jpg"].includes(file.type)) {
-      alert("Only JPG / JPEG allowed");
-      input.value = "";
-      return;
-    }
+  if (imageInput && imagePlaceholder) {
+    imagePlaceholder.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      imageInput.click();
+    });
 
-    if (file.size > 2 * 1024 * 1024) {
-      alert("Image must be less than 2MB");
-      input.value = "";
-      return;
-    }
+    imageInput.addEventListener("change", () => {
+      const file = imageInput.files[0];
+      if (!file) return;
 
-    // 👁 PREVIEW
-    const reader = new FileReader();
-    reader.onload = () => {
-      placeholder.innerHTML = "";
-      const img = document.createElement("img");
-      img.src = reader.result;
-      img.style.width = "100%";
-      img.style.borderRadius = "8px";
-      placeholder.appendChild(img);
-    };
+      if (!["image/jpeg", "image/jpg"].includes(file.type)) {
+        showToast("Only JPG / JPEG allowed", "danger");
+        imageInput.value = "";
+        return;
+      }
 
-    reader.readAsDataURL(file);
-  });
-});
+      if (file.size > 2 * 1024 * 1024) {
+        showToast("Image must be less than 2MB", "danger");
+        imageInput.value = "";
+        return;
+      }
 
-// KATEGORIES
+      const reader = new FileReader();
+      reader.onload = () => {
+        imagePlaceholder.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = reader.result;
+        img.style.width = "100%";
+        img.style.borderRadius = "8px";
+        img.style.pointerEvents = "none";
+        imagePlaceholder.appendChild(img);
+      };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const select = document.getElementById("category-select");
-  const input = document.getElementById("category-input");
-  const addBtn = document.getElementById("category-add-btn");
-  const delBtn = document.getElementById("category-del-btn");
-
-  const csrf = document.querySelector(
-    'input[name="csrfmiddlewaretoken"]'
-  ).value;
-
-  // ➕ ADD
-  addBtn.addEventListener("click", () => {
-    const name = input.value.trim();
-    if (!name) return;
-
-    fetch(addBtn.dataset.addUrl, {
-      method: "POST",
-      headers: {
-        "X-CSRFToken": csrf,
-        "Content-Type": "application/json",
-        "X-Requested-With": "XMLHttpRequest",
-      },
-      body: JSON.stringify({ name }),
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.error) return alert(data.error);
-        location.reload();
-      });
-  });
-
-  // ❌ DELETE
-  delBtn.addEventListener("click", () => {
-    const id = select.value;
-    if (!id) return alert("Select category");
-
-    const url = delBtn.dataset.delUrlTemplate.replace("0", id);
-
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "X-CSRFToken": csrf,
-        "X-Requested-With": "XMLHttpRequest",
-      },
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.error) alert(data.error);
-        else location.reload();
-      });
-  });
+      reader.readAsDataURL(file);
+    });
+  }
 });

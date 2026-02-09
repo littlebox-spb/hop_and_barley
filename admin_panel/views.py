@@ -53,6 +53,7 @@ import uuid
 from pathlib import Path
 
 from django.conf import settings
+from unidecode import unidecode
 
 
 class AdminProductCreateView(StaffRequiredMixin, CreateView):
@@ -62,10 +63,11 @@ class AdminProductCreateView(StaffRequiredMixin, CreateView):
     success_url = reverse_lazy("admin_products")
 
     def form_valid(self, form):
-        product = form.save(commit=False)
+        # 🔹 РАБОТАЕМ ТОЛЬКО С form.instance
+        product = form.instance
 
-        # ✅ ГЕНЕРАЦИЯ SLUG
-        base_slug = slugify(product.name)
+        # 🔐 ГЕНЕРАЦИЯ SLUG
+        base_slug = slugify(unidecode(product.name))
         slug = base_slug
         counter = 1
 
@@ -75,25 +77,23 @@ class AdminProductCreateView(StaffRequiredMixin, CreateView):
 
         product.slug = slug
 
+        # 🖼 КАРТИНКА
         image = self.request.FILES.get("picture")
-
         if image:
             ext = image.name.split(".")[-1].lower()
             filename = f"{uuid.uuid4()}.{ext}"
 
-            # 👉 static/img/product/
             static_path = Path(settings.BASE_DIR) / "static" / "img" / "products"
             static_path.mkdir(parents=True, exist_ok=True)
 
             file_path = static_path / filename
-
             with open(file_path, "wb+") as f:
                 for chunk in image.chunks():
                     f.write(chunk)
 
-            # 👉 сохраняем относительный путь
-            form.instance.picture_url = f"img/products/{filename}"
+            product.picture_url = f"img/products/{filename}"
 
+        # ✅ ВАЖНО: именно так
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -159,12 +159,12 @@ class AdminCategoryCreateView(StaffRequiredMixin, CreateView):
         name = data.get("name", "").strip()
         if not name:
             return JsonResponse({"error": "Empty name"}, status=400)
+        if not Category.objects.filter(name=name).exists():
+            slug = slugify(name)
+            if Category.objects.filter(slug=slug).exists():
+                return JsonResponse({"error": "Category already exists"}, status=400)
 
-        slug = slugify(name)
-        if Category.objects.filter(slug=slug).exists():
-            return JsonResponse({"error": "Category already exists"}, status=400)
-
-        cat = Category.objects.create(name=name, slug=slug)
+            cat = Category.objects.create(name=name, slug=slug)
 
         return JsonResponse(
             {

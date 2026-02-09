@@ -1,152 +1,118 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/admin.css' %}">
-{% endblock %}
-
+  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock extra_css %}
 {% block title %}
-Admin - Add/Edit Product | Hop & Barley
-{% endblock %}
-
+  Admin - Add/Edit Product | Hop & Barley
+{% endblock title %}
 {% block content %}
-<main class="admin-page-wrapper">
-  <div class="admin-container">
-
-    <!-- Tabs -->
-    <div class="admin-tabs">
-      <a href="{% url 'admin_products' %}" class="admin-tab active">
-        Product Management
-      </a>
-      <a href="{% url 'admin_dashboard' %}" class="admin-tab">
-        Dashboard
-      </a>
-    </div>
-
-    <div class="admin-content">
-      <h1 class="admin-content__title">
-        {% if object %}Edit Product{% else %}Add Product{% endif %}
-      </h1>
-
-      <!-- ✅ ЕДИНСТВЕННАЯ ФОРМА -->
-      <form method="post"
-            enctype="multipart/form-data"
-            class="admin-form-layout"
-            id="product-form">
-        {% csrf_token %}
-        <!-- ⬅ LEFT COLUMN -->
-        <div class="admin-form-col-left">
-          <h2 class="admin-form-section-title">Image</h2>
-
-          <div class="image-upload-card" id="image-card">
-            <div class="image-upload-placeholder" id="image-placeholder">
-              {% if object and object.picture_url %}
-                <img src="{% static object.picture_url %}"
-                     alt=""
-                     style="width:100%;border-radius:8px;">
-              {% else %}
-                <i class="fa-regular fa-image"></i>
-              {% endif %}
-            </div>
-
-            <!-- 🔒 скрытое поле -->
+  <main class="admin-page-wrapper">
+    <div class="admin-container">
+      <!-- Tabs -->
+      <div class="admin-tabs">
+        <a href="{% url 'admin_products' %}" class="admin-tab active">Product Management</a>
+        <a href="{% url 'admin_dashboard' %}" class="admin-tab">Dashboard</a>
+      </div>
+      <div class="admin-content">
+        <h1 class="admin-content__title">
+          {% if object %}
+            Edit Product
+          {% else %}
+            Add Product
+          {% endif %}
+        </h1>
+        <!-- ✅ ЕДИНСТВЕННАЯ ФОРМА -->
+        <form method="post"
+              enctype="multipart/form-data"
+              class="admin-form-layout"
+              id="product-form">
+          {% csrf_token %}
+          <!-- ⬅ LEFT COLUMN -->
+          <div class="admin-form-col-left">
+            <h2 class="admin-form-section-title">Image</h2>
+            <div class="image-upload-card">
+              <label for="image-input"
+                     class="image-upload-placeholder"
+                     id="image-placeholder">
+                {% if object and object.picture_url %}
+                  <img src="{% static object.picture_url %}"
+                       alt=""
+                       style="width:100%;
+                              border-radius:8px">
+                {% else %}
+                  <i class="fa-regular fa-image"></i>
+                {% endif %}
+              </label>
               <input type="file"
-                id="image-input"
-                name="picture"
-                accept=".jpg,.jpeg"
-                class="is-hidden">
+                     id="image-input"
+                     name="picture"
+                     accept=".jpg,.jpeg"
+                     class="is-hidden">
+            </div>
+            <!-- ✅ КАТЕГОРИИ (НЕ СВЯЗАНЫ С ПРОДУКТОМ) -->
+            <div class="admin-categories-block">
+              <h3 class="admin-form-section-title">Categories</h3>
+              <select id="category-select" class="Input">
+                <option value="">— Select category —</option>
+                {% for cat in categories %}<option value="{{ cat.id }}">{{ cat.name }}</option>{% endfor %}
+              </select>
+              <input type="text"
+                     id="category-input"
+                     class="Input"
+                     placeholder="New category name">
+              <div class="admin-category-actions">
+                <button type="button"
+                        class="button button--primary"
+                        id="category-add-btn"
+                        data-add-url="{% url 'admin_category_add' %}">Add</button>
+                <button type="button"
+                        class="button button--danger"
+                        id="category-del-btn"
+                        data-del-url-template="{% url 'admin_category_delete' 0 %}">Del</button>
               </div>
-
-
-<!-- ✅ КАТЕГОРИИ (НЕ СВЯЗАНЫ С ПРОДУКТОМ) -->
-<div class="admin-categories-block">
-  <h3 class="admin-form-section-title">Categories</h3>
-
-  <select id="category-select" class="Input">
-    <option value="">— Select category —</option>
-    {% for cat in categories %}
-      <option value="{{ cat.id }}">{{ cat.name }}</option>
-    {% endfor %}
-  </select>
-
-  <input
-    type="text"
-    id="category-input"
-    class="Input"
-    placeholder="New category name">
-
-  <div class="admin-category-actions">
-    <button
-      type="button"
-      class="button button--primary"
-      id="category-add-btn"
-      data-add-url="{% url 'admin_category_add' %}">
-      Add
-    </button>
-
-    <button
-      type="button"
-      class="button button--danger"
-      id="category-del-btn"
-      data-del-url-template="{% url 'admin_category_delete' 0 %}">
-      Del
-    </button>
-  </div>
-</div>
-
-        </div>
-
-        <!-- ➡ RIGHT COLUMN -->
-        <div class="admin-form-col-right">
-          <h2 class="admin-form-section-title">Information</h2>
-
-          <div class="checkout-form-group">
-            <label>Name</label>
-            {{ form.name }}
+              <div id="toast" class="toast" aria-live="polite"></div>
+            </div>
           </div>
-
-          <div class="checkout-form-group">
-            <label>Description</label>
-            {{ form.description }}
+          <!-- ➡ RIGHT COLUMN -->
+          <div class="admin-form-col-right">
+            <h2 class="admin-form-section-title">Information</h2>
+            <div class="checkout-form-group">
+              <label>Name</label>
+              {{ form.name }}
+            </div>
+            <div class="checkout-form-group">
+              <label>Description</label>
+              {{ form.description }}
+            </div>
+            <div class="checkout-form-group form-row-2">
+              <div class="form-col">
+                <label>Price</label>
+                {{ form.price }}
+              </div>
+              <div class="form-col">
+                <label>Stock</label>
+                {{ form.stock }}
+              </div>
+            </div>
+            <div class="checkout-form-group">
+              <label>Category</label>
+              {{ form.category }}
+            </div>
+            <div class="checkout-form-group">
+              <label class="checkbox-inline">{{ form.is_active }} Active</label>
+            </div>
+            <!-- ✅ КНОПКИ СТРОГО СПРАВА -->
+            <div class="admin-form-actions">
+              <button type="submit" class="button button--primary">Save</button>
+              <a href="{% url 'admin_products' %}" class="button button--secondary">Cancel</a>
+            </div>
           </div>
-
-<div class="checkout-form-group form-row-2">
-  <div class="form-col">
-    <label>Price</label>
-    {{ form.price }}
-  </div>
-
-  <div class="form-col">
-    <label>Stock</label>
-    {{ form.stock }}
-  </div>
-</div>          <div class="checkout-form-group">
-            <label>Category</label>
-            {{ form.category }}
-          </div>
-
-          <div class="checkout-form-group">
-            <label class="checkbox-inline">
-              {{ form.is_active }} Active
-            </label>
-          </div>
-
-          <!-- ✅ КНОПКИ СТРОГО СПРАВА -->
-          <div class="admin-form-actions">
-            <button type="submit" class="button button--primary">
-              Save
-            </button>
-            <a href="{% url 'admin_products' %}"
-               class="button button--secondary">
-              Cancel
-            </a>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
+{% endblock content %}
 {% block scripts %}
-<script src="{% static 'js/admin.js' %}"></script>
-{% endblock %}
-{% endblock %}
+  <script src="{% static 'js/admin.js' %}"></script>
+{% endblock scripts %}

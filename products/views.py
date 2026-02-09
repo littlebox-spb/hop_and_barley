@@ -28,20 +28,17 @@ class ProductListView(ListView):
     model = Product
     template_name = "home.html"
     context_object_name = "products"
-    paginate_by = 9   # 👈 ВАЖНО
+    paginate_by = 9  # 👈 ВАЖНО
 
     def get_queryset(self):
         queryset = (
-            Product.objects
-            .filter(is_active=True)
+            Product.objects.filter(is_active=True)
             .select_related("category")
             .annotate(
                 avg_rating=Coalesce(
-                    Avg("reviews__rating"),
-                    0.0,
-                    output_field=FloatField()
+                    Avg("reviews__rating"), 0.0, output_field=FloatField()
                 ),
-                reviews_count=Count("reviews")
+                reviews_count=Count("reviews"),
             )
         )
 
@@ -49,8 +46,7 @@ class ProductListView(ListView):
         search = self.request.GET.get("search")
         if search:
             queryset = queryset.filter(
-                Q(name__icontains=search) |
-                Q(description__icontains=search)
+                Q(name__icontains=search) | Q(description__icontains=search)
             )
 
         # 🗂 категория
@@ -91,7 +87,6 @@ class ProductListView(ListView):
         context["search_query"] = self.request.GET.get("search")
         context["current_sort"] = self.request.GET.get("sort", "price")
         return context
-
 
 
 class ProductDetailView(DetailView):

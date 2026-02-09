@@ -1,67 +1,60 @@
-{% extends "base.html" %} {% load static %} {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/admin.css' %}" />
-{% endblock %} {% block title %}Admin - Dashboard | Hop & Barley{% endblock %}
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/admin.css' %}" />
+{% endblock extra_css %}
+{% block title %}
+  Admin - Dashboard | Hop & Barley
+{% endblock title %}
 {% block content %}
-<main class="admin-page-wrapper">
-  <div class="admin-container">
-    <!-- Tabs -->
-    <div class="admin-tabs">
-      <a href="{% url 'admin_products' %}" class="admin-tab"
-        >Product Management</a
-      >
-      <a href="{% url 'admin_dashboard' %}" class="admin-tab active"
-        >Dashboard</a
-      >
-    </div>
-
-    <div class="admin-content">
-      <h1 class="admin-content__title">Admin - Dashboard</h1>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-card__header">
-            <span class="stat-card__title">Total Sales</span>
-            <div class="stat-card__icon-wrapper" style="background: #e0f8e3">
-              <i class="fa-solid fa-arrow-trend-up" style="color: #34c759"></i>
+  <main class="admin-page-wrapper">
+    <div class="admin-container">
+      <!-- Tabs -->
+      <div class="admin-tabs">
+        <a href="{% url 'admin_products' %}" class="admin-tab">Product Management</a>
+        <a href="{% url 'admin_dashboard' %}" class="admin-tab active">Dashboard</a>
+      </div>
+      <div class="admin-content">
+        <h1 class="admin-content__title">Admin - Dashboard</h1>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card__header">
+              <span class="stat-card__title">Total Sales</span>
+              <div class="stat-card__icon-wrapper" style="background: #e0f8e3">
+                <i class="fa-solid fa-arrow-trend-up" style="color: #34c759"></i>
+              </div>
             </div>
+            <p class="stat-card__value">${{ total_sales|floatformat:2 }}</p>
           </div>
-          <p class="stat-card__value">${{ total_sales|floatformat:2 }}</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-card__header">
-            <span class="stat-card__title">Total Users</span>
-            <div class="stat-card__icon-wrapper" style="background: #e6e5ff">
-              <i class="fa-solid fa-users" style="color: #5856d6"></i>
+          <div class="stat-card">
+            <div class="stat-card__header">
+              <span class="stat-card__title">Total Users</span>
+              <div class="stat-card__icon-wrapper" style="background: #e6e5ff">
+                <i class="fa-solid fa-users" style="color: #5856d6"></i>
+              </div>
             </div>
+            <p class="stat-card__value">{{ total_users }}</p>
           </div>
-          <p class="stat-card__value">{{ total_users }}</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-card__header">
-            <span class="stat-card__title">Total Orders</span>
-            <div class="stat-card__icon-wrapper" style="background: #fff0d4">
-              <i class="fa-solid fa-box-archive" style="color: #ff9f0a"></i>
+          <div class="stat-card">
+            <div class="stat-card__header">
+              <span class="stat-card__title">Total Orders</span>
+              <div class="stat-card__icon-wrapper" style="background: #fff0d4">
+                <i class="fa-solid fa-box-archive" style="color: #ff9f0a"></i>
+              </div>
             </div>
+            <p class="stat-card__value">{{ total_orders }}</p>
           </div>
-          <p class="stat-card__value">{{ total_orders }}</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-card__header">
-            <span class="stat-card__title">Pending Orders</span>
-            <div class="stat-card__icon-wrapper" style="background: #ffe6e0">
-              <i
-                class="fa-solid fa-clock-rotate-left"
-                style="color: #ff3b30"
-              ></i>
+          <div class="stat-card">
+            <div class="stat-card__header">
+              <span class="stat-card__title">Pending Orders</span>
+              <div class="stat-card__icon-wrapper" style="background: #ffe6e0">
+                <i class="fa-solid fa-clock-rotate-left" style="color: #ff3b30"></i>
+              </div>
             </div>
+            <p class="stat-card__value">{{ pending_orders }}</p>
           </div>
-          <p class="stat-card__value">{{ pending_orders }}</p>
         </div>
       </div>
     </div>
-  </div>
-</main>
-{% endblock %}
+  </main>
+{% endblock content %}

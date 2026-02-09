@@ -7,13 +7,11 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_POST
 from django.views.generic import CreateView, TemplateView
 
-from orders.models import Order
+from orders.models import Order, User
 
 from .forms import RegisterForm
 
 if TYPE_CHECKING:
-    from .models import User
-
     ViewRegister = CreateView[User, RegisterForm]
 else:
     ViewRegister = CreateView

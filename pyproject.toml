@@ -17,6 +17,7 @@ dependencies = [
     "djangorestframework-simplejwt (>=5.5.1,<6.0.0)",
     "drf-spectacular (>=0.29.0,<0.30.0)",
     "django-filter (>=25.2,<26.0)",
+    "unidecode (>=1.4.0,<2.0.0)",
 ]
 
 
@@ -110,4 +111,4 @@ django_settings_module = "config.settings"
 
 [tool.djlint]
 profile = "django"
-extend-ignore = "H006,T002,T003"
+extend-ignore = "H006,T002,T003,H021"
