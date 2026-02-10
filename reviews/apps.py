@@ -1,6 +1,10 @@
+"""Модуль приложения для модели отзывов."""
+
 from django.apps import AppConfig
 
 
 class ReviewsConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'reviews'
+    """Класс приложения для модели отзывов."""
+
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "reviews"

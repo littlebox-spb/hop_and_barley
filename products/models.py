@@ -1,3 +1,5 @@
+"""Models for the products app."""
+
 from typing import Any, Self
 
 from django.db import models
@@ -6,6 +8,8 @@ from django.utils.text import slugify
 
 
 class Category(models.Model):
+    """Category model."""
+
     name: str = models.CharField(max_length=200)  # type: ignore[assignment]
     slug: str = models.SlugField(unique=True)  # type: ignore[assignment]
     parent: Self | None = models.ForeignKey(
@@ -13,15 +17,19 @@ class Category(models.Model):
     )  # type: ignore[assignment]
 
     def __str__(self) -> str:
+        """Return the name of the category."""
         return self.name
 
     def save(self: Self, *args: Any, **kwargs: Any) -> None:
+        """Save the category."""
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
 
 class Product(models.Model):
+    """Product model."""
+
     name: str = models.CharField(max_length=200)  # type: ignore[assignment]
     slug: str = models.SlugField(unique=True)  # type: ignore[assignment]
     category: Category = models.ForeignKey(Category, on_delete=models.CASCADE)  # type: ignore[assignment]
@@ -32,12 +40,15 @@ class Product(models.Model):
     picture_url: str = models.URLField(max_length=200, blank=True, default="")  # type: ignore[assignment]
 
     def __str__(self) -> str:
+        """Return the name of the product."""
         return self.name
 
     def save(self: Self, *args: Any, **kwargs: Any) -> None:
+        """Save the product."""
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
+        """Return the absolute URL of the product."""
         return reverse("product_detail", kwargs={"slug": self.slug})

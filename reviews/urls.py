@@ -1,3 +1,5 @@
+"""URL маршруты для отзывов."""
+
 from django.urls import path
 
 from . import views
