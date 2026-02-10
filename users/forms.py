@@ -1,3 +1,5 @@
+"""Forms for the users app."""
+
 from typing import TYPE_CHECKING
 
 from django import forms
@@ -12,9 +14,13 @@ else:
 
 
 class RegisterForm(UserCreation):
+    """Register form."""
+
     email = forms.EmailField(required=True)
     phone = forms.CharField(max_length=12, required=True)
 
     class Meta:
+        """Meta class for the form."""
+
         model = User
         fields = ("username", "email", "phone", "password1", "password2")

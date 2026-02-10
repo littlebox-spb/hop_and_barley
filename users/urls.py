@@ -1,3 +1,5 @@
+"""URLs for the users app."""
+
 from django.contrib.auth.views import LoginView
 from django.urls import URLPattern, path
 

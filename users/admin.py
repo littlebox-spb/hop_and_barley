@@ -1,3 +1,5 @@
+"""Admin for the users app."""
+
 from typing import TYPE_CHECKING
 
 from django.contrib import admin
@@ -12,5 +14,7 @@ else:
 
 @admin.register(User)
 class UserAdmin(ModelAdminUser):
+    """Admin for the User model."""
+
     list_display = ("username", "email", "phone", "is_staff")
     search_fields = ("username", "email", "phone")
