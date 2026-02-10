@@ -1,5 +1,11 @@
+"""Views for the products app."""
+
+from typing import TYPE_CHECKING, Any
+
 from django.db.models import Avg, Count, FloatField, Q, QuerySet
 from django.db.models.functions import Coalesce
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render
 from django.views.generic import DetailView, ListView, TemplateView
 from rest_framework import viewsets
 
@@ -9,11 +15,23 @@ from reviews.forms import ReviewForm
 from .models import Category, Product
 from .serializers import ProductSerializer
 
+if TYPE_CHECKING:
+    ProductList = ListView[Product]
+    ProductModel = viewsets.ModelViewSet[Product]
+    ProductDetail = DetailView[Product]
+else:
+    ProductList = ListView
+    ProductModel = viewsets.ModelViewSet
+    ProductDetail = DetailView
+
 
 class HomeView(TemplateView):
+    """Home page view."""
+
     template_name = "home.html"
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        """Get context data."""
         context = super().get_context_data(**kwargs)
         context["products"] = Product.objects.filter(is_active=True)[
             :6
@@ -24,13 +42,16 @@ class HomeView(TemplateView):
         return context
 
 
-class ProductListView(ListView):
+class ProductListView(ProductList):
+    """Product list view."""
+
     model = Product
     template_name = "home.html"
     context_object_name = "products"
     paginate_by = 9  # 👈 ВАЖНО
 
-    def get_queryset(self):
+    def get_queryset(self) -> QuerySet[Product]:
+        """Get queryset."""
         queryset = (
             Product.objects.filter(is_active=True)
             .select_related("category")
@@ -65,7 +86,8 @@ class ProductListView(ListView):
 
         return queryset
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        """Get request."""
         response = super().get(request, *args, **kwargs)
 
         if request.headers.get("X-Requested-With") == "XMLHttpRequest":
@@ -73,7 +95,8 @@ class ProductListView(ListView):
 
         return response
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        """Get context data."""
         context = super().get_context_data(**kwargs)
 
         querydict = self.request.GET.copy()
@@ -89,12 +112,15 @@ class ProductListView(ListView):
         return context
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(ProductDetail):
+    """Product detail view."""
+
     model = Product
     template_name = "product_detail.html"
     context_object_name = "product"
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        """Get context data."""
         context = super().get_context_data(**kwargs)
         cart = Cart(self.request)
         product_id = str(self.object.id)
@@ -117,10 +143,12 @@ class ProductDetailView(DetailView):
 
 
 class GuidesRecipesView(TemplateView):
+    """Guides and recipes view."""
+
     template_name = "guides-recipes.html"
 
 
-class ProductViewSet(viewsets.ModelViewSet):
+class ProductViewSet(ProductModel):
     """API эндпоинт для просмотра и поиска товаров."""
 
     serializer_class = ProductSerializer
@@ -128,4 +156,5 @@ class ProductViewSet(viewsets.ModelViewSet):
     search_fields = ["name", "description"]
 
     def get_queryset(self) -> QuerySet[Product]:
+        """Get queryset."""
         return Product.objects.filter(is_active=True).select_related("category")

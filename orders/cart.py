@@ -1,9 +1,11 @@
 """
 Модуль корзины для управления товарами в сессии пользователя.
 """
+
 from decimal import Decimal
 
 from django.conf import settings
+from django.http import HttpRequest
 
 from products.models import Product
 
@@ -16,7 +18,7 @@ class Cart:
     Формат: {product_id: {'quantity': int, 'price': str}}
     """
 
-    def __init__(self, request):
+    def __init__(self: "Cart", request: HttpRequest) -> None:
         """
         Инициализация корзины из сессии.
 
@@ -33,7 +35,9 @@ class Cart:
 
         self.cart = cart
 
-    def add(self, product: Product, quantity: int = 1, override_quantity: bool = False) -> dict[str, str]:
+    def add(
+        self, product: Product, quantity: int = 1, override_quantity: bool = False
+    ) -> dict[str, str]:
         """
         Добавить товар в корзину или обновить его количество.
 
@@ -51,38 +55,32 @@ class Cart:
         # Проверка наличия товара на складе
         if quantity > product.stock:
             return {
-                'status': 'error',
-                'message': f'Available stock: {product.stock}. Cannot add {quantity} items.'
+                "status": "error",
+                "message": f"Available stock: {product.stock}. Cannot add {quantity} items.",
             }
 
         if product_id not in self.cart:
             # Добавляем новый товар
-            self.cart[product_id] = {
-                'quantity': 0,
-                'price': str(product.price)
-            }
+            self.cart[product_id] = {"quantity": 0, "price": str(product.price)}
 
         if override_quantity:
             # Заменяем количество
             new_quantity = quantity
         else:
             # Добавляем к существующему
-            new_quantity = self.cart[product_id]['quantity'] + quantity
+            new_quantity = self.cart[product_id]["quantity"] + quantity
 
         # Проверка общего количества
         if new_quantity > product.stock:
             return {
-                'status': 'error',
-                'message': f'Cannot add more. Maximum available: {product.stock}'
+                "status": "error",
+                "message": f"Cannot add more. Maximum available: {product.stock}",
             }
 
-        self.cart[product_id]['quantity'] = new_quantity
+        self.cart[product_id]["quantity"] = new_quantity
         self.save()
 
-        return {
-            'status': 'success',
-            'message': f'{product.name} added to cart'
-        }
+        return {"status": "success", "message": f"{product.name} added to cart"}
 
     def remove(self, product: Product) -> None:
         """
@@ -112,10 +110,7 @@ class Cart:
         """
         if quantity <= 0:
             self.remove(product)
-            return {
-                'status': 'success',
-                'message': 'Item removed from cart'
-            }
+            return {"status": "success", "message": "Item removed from cart"}
 
         return self.add(product, quantity, override_quantity=True)
 
@@ -141,11 +136,11 @@ class Cart:
         cart = self.cart.copy()
 
         for product in products:
-            cart[str(product.id)]['product'] = product
+            cart[str(product.id)]["product"] = product
 
         for item in cart.values():
-            item['price'] = Decimal(item['price'])
-            item['total_price'] = item['price'] * item['quantity']
+            item["price"] = Decimal(item["price"])
+            item["total_price"] = item["price"] * item["quantity"]
             yield item
 
     def __len__(self) -> int:
@@ -156,7 +151,7 @@ class Cart:
             Общее количество всех товаров
 
         """
-        return sum(item['quantity'] for item in self.cart.values())
+        return sum(item["quantity"] for item in self.cart.values())
 
     def get_total_price(self) -> Decimal:
         """
@@ -167,8 +162,7 @@ class Cart:
 
         """
         return sum(
-            Decimal(item['price']) * item['quantity']
-            for item in self.cart.values()
+            Decimal(item["price"]) * item["quantity"] for item in self.cart.values()
         )
 
     def get_items_count(self) -> int:

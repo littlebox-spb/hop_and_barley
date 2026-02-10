@@ -1,10 +1,23 @@
+"""Forms for the products app."""
+
+from typing import TYPE_CHECKING
+
 from django import forms
 
 from .models import Product
 
+if TYPE_CHECKING:
+    FormProduct = forms.ModelForm[Product]
+else:
+    FormProduct = forms.ModelForm
 
-class ProductForm(forms.ModelForm):
+
+class ProductForm(FormProduct):
+    """Product form."""
+
     class Meta:
+        """Meta class for the form."""
+
         model = Product
         fields = [
             "name",
