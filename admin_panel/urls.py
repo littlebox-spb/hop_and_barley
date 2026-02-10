@@ -1,4 +1,5 @@
-# admin_panel/urls.py
+"""URL маршруты для панели администратора."""
+
 from django.urls import path
 
 from . import views

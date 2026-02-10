@@ -1,3 +1,5 @@
+"""Forms for the admin panel."""
+
 from typing import TYPE_CHECKING
 
 from django import forms
@@ -11,7 +13,11 @@ else:
 
 
 class ProductAdminForm(ProductAdmin):
+    """Form for the admin panel."""
+
     class Meta:
+        """Meta class for the form."""
+
         model = Product
         fields = [
             "name",

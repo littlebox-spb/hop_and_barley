@@ -1,4 +1,4 @@
-"""Views для управления корзиной покупок."""
+"""Views для управления корзиной покупок и заказами."""
 
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
