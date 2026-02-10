@@ -1,3 +1,5 @@
+"""Сервис отправки электронных писем."""
+
 import logging
 
 from django.conf import settings
@@ -5,13 +7,16 @@ from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
+from orders.models import Order
+
 logger = logging.getLogger("orders.email")
 User = get_user_model()
 
 
-def send_order_created_emails(order):
+def send_order_created_emails(order: "Order") -> None:
     """
     Отправляет письма покупателю и администраторам.
+
     Письма НЕ отправляются, если email отсутствует.
     Ошибки SMTP НЕ ломают создание заказа.
     """
