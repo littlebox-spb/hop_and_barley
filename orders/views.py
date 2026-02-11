@@ -1,23 +1,33 @@
 """Views для управления корзиной покупок и заказами."""
 
+from typing import TYPE_CHECKING, Any, cast
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import transaction
-from django.http import JsonResponse
+from django.db.models import QuerySet
+from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
 from django.views.decorators.http import require_POST
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework import permissions, viewsets
+from rest_framework.serializers import BaseSerializer
 
 from products.models import Product
 from services.async_utils import run_async
 from services.email_service import send_order_created_emails
+from users.models import User
 
 from .cart import Cart
 from .forms import OrderCreateForm
 from .models import Order, OrderItem
 from .serializers import OrderSerializer
+
+if TYPE_CHECKING:
+    OrderView = viewsets.ModelViewSet[Order]
+else:
+    OrderView = viewsets.ModelViewSet
 
 
 class CartView(View):
@@ -25,7 +35,7 @@ class CartView(View):
 
     template_name = "cart.html"
 
-    def get(self, request):
+    def get(self, request: HttpRequest) -> HttpResponse:
         """
         Отобразить страницу корзины.
 
@@ -60,21 +70,25 @@ class CartView(View):
 
 
 class OrderCreateView(LoginRequiredMixin, View):
-    def get(self, request):
+    """Отображение формы для создания заказа."""
+
+    def get(self, request: HttpRequest) -> HttpResponse:
+        """Отобразить страницу создания заказа."""
         cart = Cart(request)
         if len(cart) == 0:
             return redirect("cart")
         form = OrderCreateForm()
         return render(request, "checkout.html", {"cart": cart, "form": form})
 
-    def post(self, request):
+    def post(self, request: HttpRequest) -> HttpResponse:
+        """Создать заказ."""
         cart = Cart(request)
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             try:
                 with transaction.atomic():  # Оборачиваем в транзакцию
                     order = form.save(commit=False)
-                    order.user = request.user
+                    order.user = cast("User", request.user)
                     order.total_price = cart.get_total_price()
                     order.save()
 
@@ -107,7 +121,7 @@ class OrderCreateView(LoginRequiredMixin, View):
 
 
 @require_POST
-def cart_add(request, product_id: int):
+def cart_add(request: HttpRequest, product_id: int) -> JsonResponse:
     """
     Добавить товар в корзину (AJAX).
 
@@ -142,7 +156,8 @@ def cart_add(request, product_id: int):
 
 
 @require_POST
-def cart_remove(request, product_id: int):
+def cart_remove(request: HttpRequest, product_id: int) -> JsonResponse:
+    """Удалить товар из корзины (AJAX)."""
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
 
@@ -159,7 +174,7 @@ def cart_remove(request, product_id: int):
 
 
 @require_POST
-def cart_update(request, product_id: int):
+def cart_update(request: HttpRequest, product_id: int) -> JsonResponse:
     """
     Обновить количество товара в корзине.
 
@@ -192,7 +207,7 @@ def cart_update(request, product_id: int):
     )
 
 
-def cart_clear(request):
+def cart_clear(request: HttpRequest) -> HttpResponse:
     """
     Очистить всю корзину.
 
@@ -216,18 +231,19 @@ def cart_clear(request):
     ),
     retrieve=extend_schema(description="Получить детали конкретного заказа."),
 )
-class OrderViewSet(viewsets.ModelViewSet):
+class OrderViewSet(OrderView):
     """API для управления заказами текущего пользователя."""
 
     serializer_class = OrderSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
+    def get_queryset(self) -> QuerySet[Order]:
         """Получить список заказов текущего пользователя."""
         if getattr(self, "swagger_fake_view", False):
             return Order.objects.none()
-        return Order.objects.filter(user=self.request.user)
+        user = cast("User", self.request.user)
+        return Order.objects.filter(user=user)
 
-    def perform_create(self, serializer):
+    def perform_create(self, serializer: BaseSerializer[Any]) -> None:
         """Создать новый заказ для текущего пользователя."""
         serializer.save(user=self.request.user)

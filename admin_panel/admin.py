@@ -1,2 +1,1 @@
-
-# Register your models here.
+"""Admin panel for the admin_panel app."""

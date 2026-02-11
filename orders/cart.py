@@ -1,8 +1,8 @@
-"""
-Модуль корзины для управления товарами в сессии пользователя.
-"""
+"""Модуль корзины для управления товарами в сессии пользователя."""
 
+from collections.abc import Iterator
 from decimal import Decimal
+from typing import Any
 
 from django.conf import settings
 from django.http import HttpRequest
@@ -56,7 +56,7 @@ class Cart:
         if quantity > product.stock:
             return {
                 "status": "error",
-                "message": f"Available stock: {product.stock}. Cannot add {quantity} items.",
+                "message": f"Available stock: {product.stock}. Cannot add {quantity} items.",  # noqa: E501
             }
 
         if product_id not in self.cart:
@@ -123,7 +123,7 @@ class Cart:
         del self.session[settings.CART_SESSION_ID]
         self.save()
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[dict[str, Any]]:
         """
         Итерация по товарам в корзине.
 
@@ -153,7 +153,7 @@ class Cart:
         """
         return sum(item["quantity"] for item in self.cart.values())
 
-    def get_total_price(self) -> Decimal:
+    def get_total_price(self) -> Any:
         """
         Рассчитать общую стоимость корзины.
 
