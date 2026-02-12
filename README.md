@@ -146,7 +146,7 @@ DEBUG=True
 - `GET /api/products/` — получить список продуктов
 - `GET /api/products/` — получить список заказов
 
-- OpenAPI-документация (drf-spectacular)
+#### OpenAPI-документация доступна по адресу: <http://localhost:8000/api/docs/>
 
 ---
 
