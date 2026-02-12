@@ -117,7 +117,7 @@ DEBUG=True
 
 ### 1. Клонировать репозиторий
 
-```https://github.com/littlebox-spb/hop_and_barley.git```
+```git clone https://github.com/littlebox-spb/hop_and_barley.git```
 
 ### 2. Собрать и запустить контейнеры
 
