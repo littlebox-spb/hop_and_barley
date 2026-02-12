@@ -119,11 +119,15 @@ DEBUG=True
 
 ```git clone https://github.com/littlebox-spb/hop_and_barley.git```
 
-### 2. Собрать и запустить контейнеры
+### 2. Перейти в каталог
+
+```cd hop_and_barley```
+
+### 3. Собрать и запустить контейнеры
 
 ```docker compose up --build```
 
-### 3. Создать суперпользователя
+### 4. Создать суперпользователя
 
 ```docker compose exec web python manage.py createsuperuser```
 
